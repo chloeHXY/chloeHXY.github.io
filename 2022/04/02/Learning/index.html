@@ -1,0 +1,677 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>Learning 概述混编 | MintForests</title><meta name="keywords" content="各种技术"><meta name="author" content="chloe默成"><meta name="copyright" content="chloe默成"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="关于一些标记的含义 ☀：知识小点 ❓：补充插入一个未知知识点 🔔：提醒，注意的地方 ❄：该知识点需要后续补充 ❗：注意点 🧠：一些个人见解 一、机器学习树莓派集成在一块电路板的迷你电脑 它没有屏幕  关键词：VNC  SSH 要将树莓派连接到笔记本电脑显示器，只需使用以太网电缆即可。树莓派的桌面GUI(图形用户界面)可通过笔记本电脑显示屏使用以太网连接进行查看。有许多软件程序可以在树莓派和笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning 概述混编">
+<meta property="og:url" content="http://example.com/2022/04/02/Learning/index.html">
+<meta property="og:site_name" content="MintForests">
+<meta property="og:description" content="关于一些标记的含义 ☀：知识小点 ❓：补充插入一个未知知识点 🔔：提醒，注意的地方 ❄：该知识点需要后续补充 ❗：注意点 🧠：一些个人见解 一、机器学习树莓派集成在一块电路板的迷你电脑 它没有屏幕  关键词：VNC  SSH 要将树莓派连接到笔记本电脑显示器，只需使用以太网电缆即可。树莓派的桌面GUI(图形用户界面)可通过笔记本电脑显示屏使用以太网连接进行查看。有许多软件程序可以在树莓派和笔记">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg">
+<meta property="article:published_time" content="2022-04-01T16:49:08.137Z">
+<meta property="article:modified_time" content="2022-04-01T16:50:15.712Z">
+<meta property="article:author" content="chloe默成">
+<meta property="article:tag" content="各种技术">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg"><link rel="shortcut icon" href="/img/leave.png"><link rel="canonical" href="http://example.com/2022/04/02/Learning/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery@2/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Learning 概述混编',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-04-02 00:50:15'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.1.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://pic.imgdb.cn/item/624704d027f86abb2a1a72ca.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data is-center"><div class="data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a></div><div class="data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">MintForests</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友情链接</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Learning 概述混编</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2022-04-01T16:49:08.137Z" title="Created 2022-04-02 00:49:08">2022-04-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2022-04-01T16:50:15.712Z" title="Updated 2022-04-02 00:50:15">2022-04-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/LearningNotes/">LearningNotes</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Learning 概述混编"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>关于一些标记的含义</p>
+<p>☀：知识小点</p>
+<p>❓：补充插入一个未知知识点</p>
+<p>🔔：提醒，注意的地方</p>
+<p>❄：该知识点需要后续补充</p>
+<p>❗：注意点</p>
+<p>🧠：一些个人见解</p>
+<h2 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h2><h3 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h3><p>集成在一块电路板的迷你电脑</p>
+<p>它没有屏幕</p>
+<blockquote>
+<p>关键词：VNC  SSH</p>
+<p>要将树莓派连接到笔记本电脑显示器，只需使用以太网电缆即可。树莓派的桌面GUI(图形用户界面)可通过笔记本电脑显示屏使用以太网连接进行查看。有许多软件程序可以在树莓派和笔记本电脑之间建立连接。我们使用VNC服务器软件将树莓派连接到我们的笔记本电脑，并且允许使用鼠标和键盘远程查看树莓派的桌面，这也意味着可以将树莓派放在家中的任何位置仍然可以控制它，此外，可以通过笔记本电脑的以太网WiFi共享互联网。</p>
+</blockquote>
+<h3 id="opencv"><a href="#opencv" class="headerlink" title="opencv"></a>opencv</h3><p>OpenCV是一个用于图像处理、分析、机器视觉方面的开源函数库. 它的一个目标是提供友好的机器视觉接口函数。</p>
+<p>开源的计算机视觉库</p>
+<p>误区：并不是一个ide，而是一个库，可以提供c++&#x2F;python 的相关接口函数，使用时，可以在vs上部署opencv</p>
+<p>C++ + opencv   &#x2F;&#x2F;&#x2F;   python  +  opencv</p>
+<h3 id="人脸识别"><a href="#人脸识别" class="headerlink" title="人脸识别"></a>人脸识别</h3><h5 id="机器学习的人脸识别过程"><a href="#机器学习的人脸识别过程" class="headerlink" title="机器学习的人脸识别过程"></a>机器学习的人脸识别过程</h5><p>基于传统图像处理和机器学习技术的人脸识别技术，其中的流程都是一样的。</p>
+<p>机器学习-人脸识别系统都包括：</p>
+<ul>
+<li><p>人脸检测（解决人在哪的问题）</p>
+</li>
+<li><p>人脸对齐（通过找基准点，让人脸图像都变换到一个统一的角度和姿态）</p>
+</li>
+<li><p>人脸特征向量化（特征向量用于描述这张人脸。）</p>
+<blockquote>
+<p>所以我们常常利用PCA技术对人脸描述向量进行降维处理，保留数据集中对方差贡献最大的人脸特征来达到简化数据集的目的</p>
+</blockquote>
+</li>
+<li><p>人脸识别（对上一步人脸向量进行分类，使用各种分类算法，以达到人脸识别的目的）</p>
+</li>
+</ul>
+<h5 id="深度学习的人脸识别过程"><a href="#深度学习的人脸识别过程" class="headerlink" title="深度学习的人脸识别过程"></a>深度学习的人脸识别过程</h5><blockquote>
+<p>不同于机器学习模型的人脸识别，深度学习将人脸特征向量化，以及人脸向量分类结合到了一起，通过神经网络算法一步到位。</p>
+</blockquote>
+<hr>
+<h2 id="二、计算机网络"><a href="#二、计算机网络" class="headerlink" title="二、计算机网络"></a>二、计算机网络</h2><h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>（secure shell  安全壳）  安全网络协议   专为远程登录服务会话、其他网络服务提供安全性的协议。</p>
+<p>可以加密传输数据（1）    压缩数据  提高传输速度</p>
+<p>&#x2F;<em>Windows中使用SSH，需要使用另一个软件PuTTY。</em>&#x2F;</p>
+<p><strong>（1）安全机制</strong></p>
+<p>RSA非对称加密技术</p>
+<p><strong>（2）安全验证方式</strong></p>
+<p>ssh有两种级别的安全验证方式：</p>
+<p>1.口令登录</p>
+<p>即需要输入密码登录到远程主机</p>
+<p>2.使用密钥免密登录</p>
+<p>大概是，在客户端生成密钥对，将公钥拷贝到远程主机，当客户端发送请求时，会在服务器中寻找该客户端的公钥，并与传来的公钥对比，相同则发送质询到客户端，用私钥解密后，传递登录信息到服务器。</p>
+<p>对于口令登录，虽然在传输过程中使用了rsa进行加密，但可能存在冒充服务器的情况，即中间人攻击，</p>
+<p>而使用密钥登录，无需传输口令，避免了中间人攻击。</p>
+<h3 id="FTP-File-Transfer-Protocol"><a href="#FTP-File-Transfer-Protocol" class="headerlink" title="FTP(File Transfer Protocol)"></a>FTP(File Transfer Protocol)</h3><p>文件传输协议，它是TCP&#x2F;IP协议组中的协议之一</p>
+<p>包括两个组成部分：1.FTP服务器    2.FTP客户端</p>
+<p>利用FTP协议将网页、程序传到web服务器上</p>
+<p>？？？用户使用FTP客户端通过FTP协议访问FTP服务器上的资源</p>
+<blockquote>
+<p>你还需要一种将文件从本地硬盘上传到远程Web服务器的方法。 为了做到这一点，你必须使用FTP客户端。</p>
+<p>每个系统都包含一个FTP客户端作为文件管理器的一部分。 Windows资源管理器，Nautilus（一个常见的Linux文件管理器）和Mac Finder都包含该功能。 然而，人们更经常选择专门的FTP客户端，可以存储密码并且并行显示本地和远程目录。</p>
+</blockquote>
+<h3 id="网络服务器"><a href="#网络服务器" class="headerlink" title="网络服务器"></a>网络服务器</h3><p>硬件上：计算机</p>
+<p>与其他连接到互联网的设备进行物理数据的交互</p>
+<p>软件上：HTTP服务器</p>
+<p>一台HTTP服务器是一种能够理解URL（网络地址）和HTTP（浏览器用来查看网页的协议）的软件</p>
+<h3 id="HTTP（超文本传输协议）"><a href="#HTTP（超文本传输协议）" class="headerlink" title="HTTP（超文本传输协议）"></a>HTTP（超文本传输协议）</h3><blockquote>
+<ul>
+<li>只有<em>用户</em>可以制定 HTTP 请求，然后只会发送到<em>服务器</em>。服务器只能响应客户端的HTTP请求。</li>
+<li>当通过 HTTP 请求一个文件时，客户必须提供这个文件的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/URL">URL</a>。</li>
+<li>网络服务器<em>必须应答</em>每一个 HTTP 请求，至少也要回复一个错误信息。</li>
+</ul>
+</blockquote>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>传输控制协议，它使两台主机能够建立连接并交换数据流。TCP 能保证数据的交付，维持数据包的发送顺序。确保数据传输的可靠性</p>
+<p><strong>客户端</strong></p>
+<p><strong>展现一个网页的过程</strong></p>
+<p>浏览器发送请求（获取页面的HTML文档），解析文档资源（如：css，图片视频等页面资源），继续发送请求，获取可执行脚本、css样式进行页面渲染，最终呈现一个完整的网页。浏览器获取到的可执行脚本可以在之后的阶段获取更多资源，并相应地更新网页。</p>
+<p>总之：浏览器负责发送HTTP请求，并解析HTTP返回的响应，以向用户提供明确的响应。</p>
+<p>HTTP本质是无状态的，使用<strong>Cookies（网页浏览数据）</strong>可以创建一个会话让每次请求都能共享相同的上下文信息，达成相同的状态。</p>
+<p><strong>HTTP缓存</strong></p>
+<p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。复用了以前的资源，大大提升了性能。</p>
+<h3 id="DNS（域名服务器）（Domain-Name-Server）"><a href="#DNS（域名服务器）（Domain-Name-Server）" class="headerlink" title="DNS（域名服务器）（Domain Name Server）"></a>DNS（域名服务器）（Domain Name Server）</h3><p>IP地址和域名的对应关系存放在域名服务器中，其可提供IP地址和域名之间的转换服务</p>
+<h5 id="IP地址与域名"><a href="#IP地址与域名" class="headerlink" title="IP地址与域名"></a>IP地址与域名</h5><p>IP地址就像人的身份证号：127.0.0.1(就是localhost)</p>
+<p>域名就像人的姓名：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<h5 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h5><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220111214002281.png" alt="image-20220111214002281" style="zoom:80%;" />
+
+
+
+<p>只有80端口可以被省略，非80端口，都需要 localhost:xxxx</p>
+<hr>
+<h2 id="三、后端学习"><a href="#三、后端学习" class="headerlink" title="三、后端学习"></a>三、后端学习</h2><h3 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h3><p>数据库集合，MYSQL&gt;数据库&gt;数据表&gt;数据</p>
+<h5 id="数据库的基本操作"><a href="#数据库的基本操作" class="headerlink" title="数据库的基本操作"></a>数据库的基本操作</h5><p><strong>!!!所有语句都必须有</strong>  <strong>分号</strong>  <strong>；</strong></p>
+<ol>
+<li><p>查询（列出）数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases ;     (注意有s)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database xx;</span><br></pre></td></tr></table></figure>
+
+<p>创建时指明字符类型（默认latin，常用utf8）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database xx charset=(utf8);</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;<em>创建时判段（防止重名）</em>&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database if not exits xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询具体某一数据库的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database xx;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="数据表的基本操作"><a href="#数据表的基本操作" class="headerlink" title="数据表的基本操作"></a>数据表的基本操作</h5><ol>
+<li><p>新建数据表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table <span class="title function_">xx</span><span class="params">(</span></span><br><span class="line"><span class="params">  字段名 数据类型 ,   <span class="comment">//注意每一句后面都有一个, 有点类似于对象</span></span></span><br><span class="line"><span class="params">  字段名 数据类型 ,</span></span><br><span class="line"><span class="params">  pg:name varchar(<span class="number">10</span>),  <span class="comment">//varchar</span></span></span><br><span class="line"><span class="params">  <span class="comment">//对于字段的理解：可以认为是表格中每列的列头名。</span></span></span><br></pre></td></tr></table></figure>
+
+<p>数据类型补充：</p>
+<blockquote>
+<p>数据类型: int 整型<br>     tinyint 整型（0-256）<br>     decimal 浮点型（总位数，小数位数） 例如 decimal(3,1)<br> char(X) 定长字符型 例如 char(10)<br> varchar(X) 可变长度字符型 例如varchar（10）<br> text 大段文本<br> binary 二进制（存储照片等）</p>
+</blockquote>
+</li>
+<li><p>查看所有表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示某一表的结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc table xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table xx;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h5 id="数据的基本操作"><a href="#数据的基本操作" class="headerlink" title="数据的基本操作"></a>数据的基本操作</h5><p>&#x2F;<em>为了方便后期查看，以下不再写成通用代码格式，而是用具体的实例演示</em>&#x2F;</p>
+<p>1.增</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into stu(name,grade,sex) values(&quot;cris&quot;,98,&quot;男&quot;);</span><br><span class="line">insert into stu(name,grade,sex) values(&quot;William&quot;,99,&quot;男&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>2.查</p>
+<p>​    显示该表全部数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select*from stu;</span><br></pre></td></tr></table></figure>
+
+<p>​    只显示指定列数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name from stu;</span><br></pre></td></tr></table></figure>
+
+<p>​    设置筛选条件，显示符合条件的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from stu where name=&quot;cris&quot;and sex=&quot;男&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>​     对显示的顺序进行设置（排序）</p>
+<p>​                      由高到低、由低到高</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意必须对某一字段进行排序</span></span><br><span class="line">select*from stu order by name asc;<span class="comment">//表示升序排列，默认也是升序</span></span><br><span class="line">select*from stu order by name desc;<span class="comment">//表示降序排列</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>​      对显示的数据数进行限制</p>
+<p>​                      只取前n条数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from stu limit n;</span><br></pre></td></tr></table></figure>
+
+<p>​                       从前n 条开始取m条</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select*from stu limit n,m;</span><br></pre></td></tr></table></figure>
+
+<p>3.删</p>
+<p>   删除数据和查类似，都可能包含挑选的过程。语法也是相似的，只是把select改成了delete</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from stu where name=&quot;cris&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>4.改</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update stu <span class="built_in">set</span> sex=<span class="string">&quot;女&quot;</span> where grade=<span class="number">99</span>;  <span class="comment">//将分数为99的数据条的sex值均改为女</span></span><br><span class="line">update stu <span class="built_in">set</span> sex=<span class="string">&quot;女&quot;</span>; <span class="comment">//所有数据条的sex数据段值全部改为女</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>5.运算</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum(); 求和 select sum(grade) from stu;</span><br><span class="line">avg(); 求平均值 select avg(grade) from stu;</span><br><span class="line">max(); 求最大值 select max(grade) from stu;</span><br><span class="line">min(); 求最小值 select min(grade) from stu;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><blockquote>
+<p>语句实际上与MySQL差不多，但由于本学期系统的学习了PostgreSQL数据库,故这里还是单独写总结</p>
+</blockquote>
+<h3 id="关于javaweb"><a href="#关于javaweb" class="headerlink" title="关于javaweb"></a>关于javaweb</h3><p>JSP + Servlet + JavaBean</p>
+<ol>
+<li>JSP：主要做动态页面的展示；jsp &#x3D; html + java；代码显示模板，重点在于显示数据，适合编写输出动态内容</li>
+</ol>
+<blockquote>
+<p>JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。</p>
+<p> 　　JSP语法：&lt;%@ 指令名称 属性1&#x3D;“属性值1” 属性2&#x3D;“属性值2” …%&gt;</p>
+<p>　　如：&lt;%@ page language&#x3D;”java” import&#x3D;”java.util.*” pageEncoding&#x3D;”UTF-8”%&gt;  </p>
+</blockquote>
+<p>2.Servlet：接收前端页面数据，返回前端页面响应，连接数据库，内部实现对应逻辑；</p>
+<pre><code>衍生出三层结构：
+1.web层（表现层）
+核心就是一个Servlet类，主要职能：接收数据，响应数据，调用业务逻辑层完成逻辑交互。
+
+2.service层（业务逻辑层）
+
+处理核心业务逻辑，负责web层和dao层的统一调度。
+
+3.dao(数据访问对象层) 
+
+数据库的增删改查，实体封装，数据库和实体的对应。
+</code></pre>
+<p>3.JavaBean：一个普通类，又分为实体bean 和业务bean。</p>
+<h4 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h4><p>web应用服务器，可以利用它相应HTML页面的访问请求。</p>
+<h4 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h4><p>java编写的服务器端程序，主要功能是交互式的浏览、修改数据，生成动态web的内容</p>
+<p>java语言的一个接口</p>
+<p>主要是将http请求，封装为一个request对象，</p>
+<h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p>核心控制器：dispatcherServlet(前端控制器)</p>
+<p>是一个具有mvc功能的Servlet</p>
+<blockquote>
+<p> 请求说明：一个请求进来经过前端控制器Dispatcher Servlet，这是前端的核心。一个请求的URL进来，经过Dispatcher Servlet转发，首先转发到Handler Mapping，②Handler Mapping的作用就是完成对URL到Controller组件的映射，然后通过Dispatcher Servlet从Handlermapping查找处理request的Controller。③ controller处理request请求后并返回ModelAndView对象，Controller是是springmvc中负责处理request的组件，ModelAndView是封装结果视图的组件。其后面的步骤就是将视图结果返回给客户端。总结：上图除了Dispatcherservlet以外其他的都是相互独立，所有请求都经过这个核心控制器进行转发控制。   </p>
+</blockquote>
+<h2 id="四、OS-计算机操作系统"><a href="#四、OS-计算机操作系统" class="headerlink" title="四、OS(计算机操作系统)"></a>四、OS(计算机操作系统)</h2><h3 id="【OS】DOS"><a href="#【OS】DOS" class="headerlink" title="【OS】DOS"></a>【OS】DOS</h3><p><strong>是什么？</strong></p>
+<p>DOS(Disk Operation System)磁盘操作系统，通过dos语言（命令）对电脑系统中的磁盘文件进行操作管理。</p>
+<p><strong>在哪里？</strong></p>
+<p>windows操作系统下通过cmd即可运行dos环境</p>
+<p><strong>同为操作系统，和windows有何异同？</strong></p>
+<p>Dos实际上先于windows出现，最大的不同是windows相较于dos实现了图形化界面，无需输入命令，鼠标点击即可，且我们一次可以打开多个程序窗口，而不像dos需要记忆大量命令，还是单任务单对象。</p>
+<p>但dos仍然有很多优点，比如一些远程操作等高级操作，dos只需要一行命令即可实现，而windows却要一直点点点&#x2F;(ㄒoㄒ)&#x2F;~~</p>
+<p>而且dos的速度非常快，效率非常高。</p>
+<h3 id="【OS】Cmd-与-powershell"><a href="#【OS】Cmd-与-powershell" class="headerlink" title="【OS】Cmd 与 powershell"></a>【OS】Cmd 与 powershell</h3><p>cmd和powershell都是windows下的终端，powershell是新终端，版本更高。</p>
+<h5 id="终端中的常用快捷键"><a href="#终端中的常用快捷键" class="headerlink" title="终端中的常用快捷键"></a><strong>终端中的常用快捷键</strong></h5><ol>
+<li>↑：获取上一次输入的命令</li>
+<li>tab:快速补全路径</li>
+<li>esc:清空当前输入的命令</li>
+<li>cls：清空整个终端</li>
+<li>ctrl+c：停止服务器运行</li>
+</ol>
+<h3 id="【OS】关于-r-、-r-n-、-n的区别"><a href="#【OS】关于-r-、-r-n-、-n的区别" class="headerlink" title="【OS】关于\r 、\r\n 、  \n的区别"></a>【OS】关于\r 、\r\n 、  \n的区别</h3><p>\n：换行 （换到当前位置的下一行，而不是行首）</p>
+<p>\r：回车（回到当前行的行首，可能会覆盖该行）</p>
+<p>在windows系统中，实现我们所想的”换行”实际是回车换行，需要用\r\n实现，而linux系统下则只需要\n</p>
+<p>但我们编写某些高级语言程序时，发现，使用\n也可以达到我们想要的效果，这是因为，编译器，帮我们将\n自动转换为了\r\n</p>
+<h3 id="【os】基础知识"><a href="#【os】基础知识" class="headerlink" title="【os】基础知识"></a>【os】基础知识</h3><p>什么是操作系统接口？</p>
+<p>—系统调用（的函数）   （主要包括以下这些）</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220222203652054.png" alt="image-20220222203652054" style="zoom: 80%;" />
+
+<ol>
+<li></li>
+</ol>
+<p>道：运行在系统里的进程&#x2F;线程的数量</p>
+<p>操作系统是运行在硬件上的第一层软件</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>可以把操作系统看作虚拟机：</p>
+<p>硬件裸机+OS扩展功能&#x3D;&#x3D;&#x3D;&gt;虚拟机</p>
+<p>操作系统也可以看作资源管理器，跟踪资源，及时回收</p>
+<p>（内存管理，cpu管理，IO设备管理，文件管理）  </p>
+<ol start="3">
+<li></li>
+</ol>
+<p>操作系统的功能性需求：供用户使用（用户接口：命令 图形），供应用程序调用（API）</p>
+<p>操作系统非功能性需求  </p>
+<p>性能：吞吐量（单位时间内处理的作业量）、响应时间、用户数</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>线程：一次独立的运行过程，<strong>系统调度</strong>的最小单位，（系统执行的不是程序，而是线程）</p>
+<p>进程：拥有<strong>资源</strong>的最小实体，（一个进程中可能有许多线程在使用其资源）</p>
+<p>☀进程是程序在一个数据集合上的运行过程，是系统进行资源分配和调度的一个独立单位</p>
+<p>（现在的教材并没有明确区分线程和进程的概念，反而还没怎么提线程了，按☀记即可）</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>单道程序设计：内存中只能有一个任务驻留，独占资源 </p>
+<p>（处理器 must wait for I&#x2F;O instruction to complete before 继续做）</p>
+<p>多道程序设计：内存中多个任务程序同时<strong>准备</strong>运行</p>
+<p>（ps:<strong>准备</strong>：<strong>cpu是串行的</strong>，多个任务之间不可能真正的一起处理，还是存在调度问题，可以插空使用）</p>
+<p>同步：实际上是一种协调配合</p>
+<p>互斥：不能同时用一个</p>
+<p>死锁。。</p>
+<p>分时系统：时间分片，处理器轮流使用，最大化减少响应时间，</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>本课程基于单机操作系统</p>
+<p>单机操作系统的类型：</p>
+<ul>
+<li>批处理系统：吞吐量大，提高资源利用率</li>
+<li>分时系统：响应时间少</li>
+<li>实时系统</li>
+</ul>
+<ol start="7">
+<li></li>
+</ol>
+<p>现代OS的两大特征：</p>
+<p>任务并行&amp;资源共享</p>
+<ol start="8">
+<li></li>
+</ol>
+<p>程序执行顺序</p>
+<ul>
+<li>顺序执行（特征：顺序性，封闭性，可在现性（相同条件结果可复刻））</li>
+<li>并发执行（特征：间断性，非封闭性，不可再现）</li>
+</ul>
+<p>解决并发执行结果的不可再现性（即每次都可能不同），应使A进程的读与B进程的写不能同时进行</p>
+<p>同步、互斥、死锁</p>
+<p>分时系统：</p>
+<p>针对交互式工作以 </p>
+<p>调度频率高，浪费掉额外时间，转换时间？</p>
+<p><strong>区别</strong></p>
+<p>调度的主动性（主动&#x2F;被动）:</p>
+<p>调度的频率：</p>
+<p>并 行&#x2F;并发</p>
+<p>执行模式</p>
+<p>微核结构</p>
+<h2 id="五、web相关"><a href="#五、web相关" class="headerlink" title="五、web相关"></a>五、web相关</h2><h2 id="六、其他"><a href="#六、其他" class="headerlink" title="六、其他"></a>六、其他</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><ol>
+<li>注意在正则式中[\S\s]*表示匹配所有字符</li>
+</ol>
+<h3 id="镜像（Mirroring）"><a href="#镜像（Mirroring）" class="headerlink" title="镜像（Mirroring）"></a>镜像（Mirroring）</h3><p>一种文件存储形式，一个磁盘上的数据在另一个磁盘上存在一个完全相同的副本即为镜像</p>
+<h1 id="七、前端"><a href="#七、前端" class="headerlink" title="七、前端"></a>七、前端</h1><h2 id="【前端】node-js"><a href="#【前端】node-js" class="headerlink" title="【前端】node.js"></a>【前端】node.js</h2><blockquote>
+<p>注意：在node里面：文件夹名字&#x2F;文件名字最好不要出现中文&#x2F;空格，不然可能导致某些命令错误</p>
+</blockquote>
+<h4 id="node-js的模块化概念"><a href="#node-js的模块化概念" class="headerlink" title="node.js的模块化概念"></a>node.js的模块化概念</h4><p>CommonJs是模块化的标准。广泛应用于Nodejs、vue、react等框架语言</p>
+<p>模块是Node.js应用程序的基本组成部分，文件与模块是一一对应的。一个Node.js文件就是一个模块。</p>
+<p>可以认为每个模块都是一个module对象，包含两个对象  ：require（从外部获取一个模块的公开接口）  exports（<strong>模块公开的接口</strong>）</p>
+<p>想让外部可以访问模块里面的方法或属性，就必须通过exports&#x2F;module.exports暴露属性或方法</p>
+<p>1.将想让外部模块使用的方法&#x2F;属性添加为exports对象的成员变量</p>
+<p>2.也可以直接将module.exports&#x3D;一个对象，直接暴露一个对象</p>
+<p>最好不要同时使用上述方法，可能存在覆盖。</p>
+<img src="https://img-blog.csdnimg.cn/20190418234619685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlcnJ5cXB3,size_16,color_FFFFFF,t_70" alt="img" style="zoom:80%;" />
+
+<p><strong>可以认为var hello&#x3D;require(‘.&#x2F;hello’)；  hello就是hello.js中的exports对象</strong></p>
+<h4 id="npm与包"><a href="#npm与包" class="headerlink" title="npm与包"></a>npm与包</h4><ul>
+<li><h5 id="包的安装"><a href="#包的安装" class="headerlink" title="包的安装"></a>包的安装</h5><blockquote>
+<p>安装命令可依据官方文档</p>
+</blockquote>
+<ol>
+<li>项目包</li>
+</ol>
+<p><strong>npm i xxx -D</strong>     #开发依赖包（只在项目开发阶段用到，上线即不再使用）  ， 被记录到devDependencies节点下</p>
+<p><strong>npm i xxx</strong>          #核心依赖包   ， 被记录到dependencies节点下</p>
+<p>   2.全局包(如nrm,往往是工具包)</p>
+<p><strong>npm i xxx -g</strong>  </p>
+<p><strong>npm uninstall xxx -g</strong></p>
+<p>【全局安装与本地安装的区别】见csdn</p>
+</li>
+<li><h5 id="包管理配置文件：package-json"><a href="#包管理配置文件：package-json" class="headerlink" title="包管理配置文件：package.json"></a>包管理配置文件：package.json</h5><p>创建口令：<strong>npm init -y</strong> </p>
+<p>创建时间：项目建设初</p>
+<p>前提：项目文件夹名称为 <strong>英文 无空格</strong></p>
+<p>package.json中的 dependencies 对象即记录项目所用的所有包的名称与版本，每一次下载包，npm会自动添加信息到p.json中</p>
+<blockquote>
+<p>在项目多人协作时，无需将node_modules上传到github中，因为太大了<br>因为有package.json,拉取后只需 执行  <strong>npm install</strong>  即可下载该项目所需的所有包</p>
+</blockquote>
+</li>
+<li><h5 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h5><p><strong>npm uninstall xxx</strong></p>
+</li>
+<li><h5 id="全局包：i5ting-toc"><a href="#全局包：i5ting-toc" class="headerlink" title="全局包：i5ting_toc"></a>全局包：i5ting_toc</h5><p>命令：<strong>i5ting_toc -f  xxx  -o</strong></p>
+<p>将md文件转化为html，并在默认浏览器中预览，同时生成preview文件夹（包含对应转换后的html文件，可以随时打开预览）</p>
+</li>
+</ul>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220114153408323.png" alt="image-20220114153408323" style="zoom:80%;" />
+
+
+
+<h4 id="nodemon"><a href="#nodemon" class="headerlink" title="nodemon"></a>nodemon</h4><blockquote>
+<p>学习时，已经全局安装过Nodemon了，下次使用时只需</p>
+<p>nodemon xxx（xxx是文件名）</p>
+<p>代替原来的node xxx运行项目</p>
+</blockquote>
+<p>监听项目文件的变动，自动帮我们重启项目</p>
+<h2 id="【前端】Express框架"><a href="#【前端】Express框架" class="headerlink" title="【前端】Express框架"></a>【前端】Express框架</h2><p>npm上的第三方包，提供快速创建web服务器的方法</p>
+<p>作用类似于Http模块，专门用来创建web服务器</p>
+<p>同时express也提供了一些其他的方法，相较于Http更强大。</p>
+<h2 id="【前端】AJAX"><a href="#【前端】AJAX" class="headerlink" title="【前端】AJAX"></a>【前端】AJAX</h2><p><strong>简介</strong>：异步的js与xml</p>
+<p>☀最大特点：无需刷新，获取数据，改变页面</p>
+<p>❓ <strong>xml:</strong></p>
+<p>可扩展性标记语言</p>
+<p>和html相比，xml全是自定义标签，而html使用的都是预定义标签，如<h1><html><a><div>……</p>
+<p>【use】用来存储、传输数据，对应有xml格式的数据，一个标签用于描述一段数据      🔔：现常用JSON格式数据(下方有详细介绍)</p>
+<p>【use】也常做为配置文件，如：web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">例：xml有固定的语法规范，使用前自己查明即可，这里不过多赘述，增加现阶段学习负担</span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;gb2312&quot;</span>?&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">stu</span> <span class="attr">id</span>=<span class="string">&quot;001&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>杨过<span class="tag">&lt;/<span class="name">name</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>20<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">stu</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">stu</span> <span class="attr">id</span>=<span class="string">&quot;002&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>小龙女<span class="tag">&lt;/<span class="name">name</span>&gt;</span>    </span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>女<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>21<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">stu</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>☀AJAX的优点：</p>
+<p>①无需刷新，即可从服务器端获取数据</p>
+<p>②允许根据用户事件来更新页面内容</p>
+<p>☀ AJAX的缺点：</p>
+<p>①没有浏览历史，不能回退</p>
+<p>②SEO不友好，爬虫并不能捕获到相关数据❄(csdn上有改善seo的方法)</p>
+<p>③跨域问题❄</p>
+<h4 id="【AJAX】关于JSON"><a href="#【AJAX】关于JSON" class="headerlink" title="【AJAX】关于JSON"></a>【AJAX】关于JSON</h4><p><strong>总体认识：</strong>一种传递、存储对象的语法格式，对象包括：name&#x2F;value对、数组、等其他对象</p>
+<p>其语法规则参考Js, 广泛应用于多种语言</p>
+<p><strong>语法规则：</strong>特殊点：❗不能出现单引号   ❗所有的名必须用<u>双引号</u>包裹  ❗数组或对象的最后一个成员后面不能加逗号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">JSON数据实例</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;:&quot;jack&quot;,</span><br><span class="line">  &quot;skillz&quot;: &#123;</span><br><span class="line">    &quot;web&quot;: [ </span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;html&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;5&quot;</span><br><span class="line">      &#125;，</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;css&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;3&quot; </span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;database&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;sql&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;7&quot; </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>🔔  JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。</p>
+<p>var obj &#x3D; {a: ‘Hello’, b: ‘World’}; &#x2F;&#x2F;这是一个js对象</p>
+<p>var json &#x3D; ‘{“a”: “Hello”, “b”: “World”}’; &#x2F;&#x2F;这是一个 JSON 字符串</p>
+<p>🧠：一些个人发现：</p>
+<p>查找资料的时候，常常出现JSON字符串这个名词，而许多实例如代码框中的，明显不是字符串。</p>
+<p>我使用log打印上述JSON对象（暂且称呼），结果发现打印值就是js对象</p>
+<p>可见JSON出现的意义就是字符串化js对象，作字符串用</p>
+<p>☀两个转换</p>
+<p>JSON字符串转js对象</p>
+<p>JSON.parse(Str);</p>
+<p>JS对象(或者是json对象)转JSON字符串</p>
+<p>JSON.stringify(Object);</p>
+<h4 id="【AJAX】关于HTTP请求"><a href="#【AJAX】关于HTTP请求" class="headerlink" title="【AJAX】关于HTTP请求"></a>【AJAX】关于HTTP请求</h4><p>请求的内容又叫<strong>请求报文</strong>，相应的还有<strong>响应报文</strong></p>
+<p>以下内容，在调试时，都可以通过浏览器控制台查看，是🚩后为具体位置</p>
+<p>☀请求报文的格式：</p>
+<p>行： METHOD(如POST、GET、DELETE……)      URL            HTTP协议的版本号</p>
+<p>头：pg:   HOST:   xxx</p>
+<p>​                xxx:    xxx        🔔：格式均按照名称+冒号+空格+值                                                          🚩 请求行、头都在RequestHeaders</p>
+<p>空行</p>
+<p>体：（若是get请求，则请求体为空）               🚩post请求在：FromData    get请求可在 QueryStringParameters中查看查询字符串参数</p>
+<p>☀响应报文的格式：</p>
+<p>行：HTTP协议版本号   响应状态码（如200，404，403） 状态字（其中200：OK 404：NOT FOUND）</p>
+<p>头：格式同上                                                        🚩 请求行、头都在ResponseHeaders</p>
+<p>空行</p>
+<p>体：响应体是html语言                                         🚩Response</p>
+<h4 id="【AJAX】关于IE缓存"><a href="#【AJAX】关于IE缓存" class="headerlink" title="【AJAX】关于IE缓存"></a>【AJAX】关于IE缓存</h4><p>在使用IE浏览器作为客户端发送AJAX请求时，存在响应缓存问题</p>
+<p>即若两次请求的method,url地址相同，则直接从缓存区获得上一次的响应结果。</p>
+<p>解决方法：（针对get方法）添加查询字符串参数 t&#x3D;Data.now()    使每次请求的url地址都不同。</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220130001937042.png" alt="image-20220130001937042" style="zoom: 80%;" />
+
+<p>​    </p>
+<h2 id="【前端】移动端开发"><a href="#【前端】移动端开发" class="headerlink" title="【前端】移动端开发"></a>【前端】移动端开发</h2><p>国内尚无自主研发的移动端浏览器内核，兼容移动端主流浏览器，处理Webkit内核浏览器即可</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">chloe默成</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2022/04/02/Learning/">http://example.com/2022/04/02/Learning/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%90%84%E7%A7%8D%E6%8A%80%E6%9C%AF/">各种技术</a></div><div class="post_share"><div class="social-share" data-image="https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2022/04/02/%E5%87%BA%E8%B5%B0/"><img class="next-cover" src="https://pic.imgdb.cn/item/62472e0827f86abb2a73dfe7.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">出走</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://pic.imgdb.cn/item/624704d027f86abb2a1a72ca.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">chloe默成</div><div class="author-info__description">躬行不言，默而成事</div></div><div class="card-info-data is-center"><div class="card-info-data-item"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">12</div></a></div><div class="card-info-data-item"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">6</div></a></div><div class="card-info-data-item"><a href="/categories/"><div class="headline">Categories</div><div class="length-num">2</div></a></div></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/chloeHXY"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/chloeHXY" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:chloeHXY0118@163.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%80%E3%80%81%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0"><span class="toc-number">1.</span> <span class="toc-text">一、机器学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE"><span class="toc-number">1.1.</span> <span class="toc-text">树莓派</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#opencv"><span class="toc-number">1.2.</span> <span class="toc-text">opencv</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB"><span class="toc-number">1.3.</span> <span class="toc-text">人脸识别</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.0.1.</span> <span class="toc-text">机器学习的人脸识别过程</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0%E7%9A%84%E4%BA%BA%E8%84%B8%E8%AF%86%E5%88%AB%E8%BF%87%E7%A8%8B"><span class="toc-number">1.3.0.2.</span> <span class="toc-text">深度学习的人脸识别过程</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%8C%E3%80%81%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C"><span class="toc-number">2.</span> <span class="toc-text">二、计算机网络</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#SSH"><span class="toc-number">2.1.</span> <span class="toc-text">SSH</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#FTP-File-Transfer-Protocol"><span class="toc-number">2.2.</span> <span class="toc-text">FTP(File Transfer Protocol)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%99%A8"><span class="toc-number">2.3.</span> <span class="toc-text">网络服务器</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#HTTP%EF%BC%88%E8%B6%85%E6%96%87%E6%9C%AC%E4%BC%A0%E8%BE%93%E5%8D%8F%E8%AE%AE%EF%BC%89"><span class="toc-number">2.4.</span> <span class="toc-text">HTTP（超文本传输协议）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#TCP"><span class="toc-number">2.5.</span> <span class="toc-text">TCP</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DNS%EF%BC%88%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8%EF%BC%89%EF%BC%88Domain-Name-Server%EF%BC%89"><span class="toc-number">2.6.</span> <span class="toc-text">DNS（域名服务器）（Domain Name Server）</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#IP%E5%9C%B0%E5%9D%80%E4%B8%8E%E5%9F%9F%E5%90%8D"><span class="toc-number">2.6.0.1.</span> <span class="toc-text">IP地址与域名</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%AB%AF%E5%8F%A3%E5%8F%B7"><span class="toc-number">2.6.0.2.</span> <span class="toc-text">端口号</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%89%E3%80%81%E5%90%8E%E7%AB%AF%E5%AD%A6%E4%B9%A0"><span class="toc-number">3.</span> <span class="toc-text">三、后端学习</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#MYSQL"><span class="toc-number">3.1.</span> <span class="toc-text">MYSQL</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.0.1.</span> <span class="toc-text">数据库的基本操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A1%A8%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.0.2.</span> <span class="toc-text">数据表的基本操作</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="toc-number">3.1.0.3.</span> <span class="toc-text">数据的基本操作</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#PostgreSQL"><span class="toc-number">3.2.</span> <span class="toc-text">PostgreSQL</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%B3%E4%BA%8Ejavaweb"><span class="toc-number">3.3.</span> <span class="toc-text">关于javaweb</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#Tomcat"><span class="toc-number">3.3.1.</span> <span class="toc-text">Tomcat</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Servlet"><span class="toc-number">3.3.2.</span> <span class="toc-text">Servlet</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#SpringMVC"><span class="toc-number">3.3.3.</span> <span class="toc-text">SpringMVC</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%9B%E3%80%81OS-%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"><span class="toc-number">4.</span> <span class="toc-text">四、OS(计算机操作系统)</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90OS%E3%80%91DOS"><span class="toc-number">4.1.</span> <span class="toc-text">【OS】DOS</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90OS%E3%80%91Cmd-%E4%B8%8E-powershell"><span class="toc-number">4.2.</span> <span class="toc-text">【OS】Cmd 与 powershell</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E7%BB%88%E7%AB%AF%E4%B8%AD%E7%9A%84%E5%B8%B8%E7%94%A8%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="toc-number">4.2.0.1.</span> <span class="toc-text">终端中的常用快捷键</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90OS%E3%80%91%E5%85%B3%E4%BA%8E-r-%E3%80%81-r-n-%E3%80%81-n%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="toc-number">4.3.</span> <span class="toc-text">【OS】关于\r 、\r\n 、  \n的区别</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E3%80%90os%E3%80%91%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="toc-number">4.4.</span> <span class="toc-text">【os】基础知识</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BA%94%E3%80%81web%E7%9B%B8%E5%85%B3"><span class="toc-number">5.</span> <span class="toc-text">五、web相关</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%AD%E3%80%81%E5%85%B6%E4%BB%96"><span class="toc-number">6.</span> <span class="toc-text">六、其他</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F"><span class="toc-number">6.1.</span> <span class="toc-text">正则表达式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%95%9C%E5%83%8F%EF%BC%88Mirroring%EF%BC%89"><span class="toc-number">6.2.</span> <span class="toc-text">镜像（Mirroring）</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%83%E3%80%81%E5%89%8D%E7%AB%AF"><span class="toc-number"></span> <span class="toc-text">七、前端</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E5%89%8D%E7%AB%AF%E3%80%91node-js"><span class="toc-number">1.</span> <span class="toc-text">【前端】node.js</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node-js%E7%9A%84%E6%A8%A1%E5%9D%97%E5%8C%96%E6%A6%82%E5%BF%B5"><span class="toc-number">1.0.1.</span> <span class="toc-text">node.js的模块化概念</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#npm%E4%B8%8E%E5%8C%85"><span class="toc-number">1.0.2.</span> <span class="toc-text">npm与包</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%85%E7%9A%84%E5%AE%89%E8%A3%85"><span class="toc-number">1.0.2.1.</span> <span class="toc-text">包的安装</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%8C%85%E7%AE%A1%E7%90%86%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%EF%BC%9Apackage-json"><span class="toc-number">1.0.2.2.</span> <span class="toc-text">包管理配置文件：package.json</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%88%A0%E9%99%A4%E5%8C%85"><span class="toc-number">1.0.2.3.</span> <span class="toc-text">删除包</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8C%85%EF%BC%9Ai5ting-toc"><span class="toc-number">1.0.2.4.</span> <span class="toc-text">全局包：i5ting_toc</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#nodemon"><span class="toc-number">1.0.3.</span> <span class="toc-text">nodemon</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E5%89%8D%E7%AB%AF%E3%80%91Express%E6%A1%86%E6%9E%B6"><span class="toc-number">2.</span> <span class="toc-text">【前端】Express框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E5%89%8D%E7%AB%AF%E3%80%91AJAX"><span class="toc-number">3.</span> <span class="toc-text">【前端】AJAX</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number"></span> <span class="toc-text">……
+【use】用来存储、传输数据，对应有xml格式的数据，一个标签用于描述一段数据      🔔：现常用JSON格式数据(下方有详细介绍)
+【use】也常做为配置文件，如：web.xml
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+例：xml有固定的语法规范，使用前自己查明即可，这里不过多赘述，增加现阶段学习负担
+&lt;?xml version&#x3D;&quot;1.0&quot; encoding&#x3D;&quot;gb2312&quot;?&gt;
+ 
+&lt;class&gt;
+    &lt;stu id&#x3D;&quot;001&quot;&gt;
+        &lt;name&gt;杨过&lt;&#x2F;name&gt; 
+        &lt;sex&gt;男&lt;&#x2F;sex&gt;
+        &lt;age&gt;20&lt;&#x2F;age&gt;
+    &lt;&#x2F;stu&gt;  
+    &lt;stu id&#x3D;&quot;002&quot;&gt;
+        &lt;name&gt;小龙女&lt;&#x2F;name&gt;    
+        &lt;sex&gt;女&lt;&#x2F;sex&gt;
+        &lt;age&gt;21&lt;&#x2F;age&gt;
+    &lt;&#x2F;stu&gt;
+&lt;&#x2F;class&gt;
+
+
+☀AJAX的优点：
+①无需刷新，即可从服务器端获取数据
+②允许根据用户事件来更新页面内容
+☀ AJAX的缺点：
+①没有浏览历史，不能回退
+②SEO不友好，爬虫并不能捕获到相关数据❄(csdn上有改善seo的方法)
+③跨域问题❄
+【AJAX】关于JSON总体认识：一种传递、存储对象的语法格式，对象包括：name&#x2F;value对、数组、等其他对象
+其语法规则参考Js, 广泛应用于多种语言
+语法规则：特殊点：❗不能出现单引号   ❗所有的名必须用双引号包裹  ❗数组或对象的最后一个成员后面不能加逗号
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+JSON数据实例
+{
+  &quot;name&quot;:&quot;jack&quot;,
+  &quot;skillz&quot;: {
+    &quot;web&quot;: [ 
+      {
+        &quot;name&quot;: &quot;html&quot;，
+        &quot;years&quot;: &quot;5&quot;
+      }，
+      {
+        &quot;name&quot;: &quot;css&quot;，
+        &quot;years&quot;: &quot;3&quot; 
+      }
+    ],
+    &quot;database&quot;: [
+      {
+        &quot;name&quot;: &quot;sql&quot;，
+        &quot;years&quot;: &quot;7&quot; 
+      }
+    ]
+  }
+}
+
+
+
+🔔  JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。
+var obj &#x3D; {a: ‘Hello’, b: ‘World’}; &#x2F;&#x2F;这是一个js对象
+var json &#x3D; ‘{“a”: “Hello”, “b”: “World”}’; &#x2F;&#x2F;这是一个 JSON 字符串
+🧠：一些个人发现：
+查找资料的时候，常常出现JSON字符串这个名词，而许多实例如代码框中的，明显不是字符串。
+我使用log打印上述JSON对象（暂且称呼），结果发现打印值就是js对象
+可见JSON出现的意义就是字符串化js对象，作字符串用
+☀两个转换
+JSON字符串转js对象
+JSON.parse(Str);
+JS对象(或者是json对象)转JSON字符串
+JSON.stringify(Object);
+【AJAX】关于HTTP请求请求的内容又叫请求报文，相应的还有响应报文
+以下内容，在调试时，都可以通过浏览器控制台查看，是🚩后为具体位置
+☀请求报文的格式：
+行： METHOD(如POST、GET、DELETE……)      URL            HTTP协议的版本号
+头：pg:   HOST:   xxx
+​                xxx:    xxx        🔔：格式均按照名称+冒号+空格+值                                                          🚩 请求行、头都在RequestHeaders
+空行
+体：（若是get请求，则请求体为空）               🚩post请求在：FromData    get请求可在 QueryStringParameters中查看查询字符串参数
+☀响应报文的格式：
+行：HTTP协议版本号   响应状态码（如200，404，403） 状态字（其中200：OK 404：NOT FOUND）
+头：格式同上                                                        🚩 请求行、头都在ResponseHeaders
+空行
+体：响应体是html语言                                         🚩Response
+【AJAX】关于IE缓存在使用IE浏览器作为客户端发送AJAX请求时，存在响应缓存问题
+即若两次请求的method,url地址相同，则直接从缓存区获得上一次的响应结果。
+解决方法：（针对get方法）添加查询字符串参数 t&#x3D;Data.now()    使每次请求的url地址都不同。
+
+
+​    
+【前端】移动端开发国内尚无自主研发的移动端浏览器内核，兼容移动端主流浏览器，处理Webkit内核浏览器即可
+</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%90AJAX%E3%80%91%E5%85%B3%E4%BA%8EJSON"><span class="toc-number">0.0.1.</span> <span class="toc-text">【AJAX】关于JSON</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%90AJAX%E3%80%91%E5%85%B3%E4%BA%8EHTTP%E8%AF%B7%E6%B1%82"><span class="toc-number">0.0.2.</span> <span class="toc-text">【AJAX】关于HTTP请求</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E3%80%90AJAX%E3%80%91%E5%85%B3%E4%BA%8EIE%E7%BC%93%E5%AD%98"><span class="toc-number">0.0.3.</span> <span class="toc-text">【AJAX】关于IE缓存</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E3%80%90%E5%89%8D%E7%AB%AF%E3%80%91%E7%A7%BB%E5%8A%A8%E7%AB%AF%E5%BC%80%E5%8F%91"><span class="toc-number">1.</span> <span class="toc-text">【前端】移动端开发</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/04/02/Learning/" title="Learning 概述混编"><img src="https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Learning 概述混编"/></a><div class="content"><a class="title" href="/2022/04/02/Learning/" title="Learning 概述混编">Learning 概述混编</a><time datetime="2022-04-01T16:49:08.137Z" title="Created 2022-04-02 00:49:08">2022-04-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/02/%E5%87%BA%E8%B5%B0/" title="出走"><img src="https://pic.imgdb.cn/item/62472e0827f86abb2a73dfe7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="出走"/></a><div class="content"><a class="title" href="/2022/04/02/%E5%87%BA%E8%B5%B0/" title="出走">出走</a><time datetime="2022-04-01T16:08:16.818Z" title="Created 2022-04-02 00:08:16">2022-04-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/04/02/%E4%B8%80%E6%97%A5%E8%A8%80/" title="一日言"><img src="https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="一日言"/></a><div class="content"><a class="title" href="/2022/04/02/%E4%B8%80%E6%97%A5%E8%A8%80/" title="一日言">一日言</a><time datetime="2022-04-01T16:07:50.770Z" title="Created 2022-04-02 00:07:50">2022-04-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/01/03/%E6%91%A9%E7%BE%AF%E6%9C%88%E6%9D%82%E8%B0%88/" title="人间缺席三小时"><img src="https://pic.imgdb.cn/item/62472e0827f86abb2a73dfe7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人间缺席三小时"/></a><div class="content"><a class="title" href="/2022/01/03/%E6%91%A9%E7%BE%AF%E6%9C%88%E6%9D%82%E8%B0%88/" title="人间缺席三小时">人间缺席三小时</a><time datetime="2022-01-02T16:00:00.000Z" title="Created 2022-01-03 00:00:00">2022-01-03</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/12/10/%E4%BA%BA%E9%97%B4%E7%BC%BA%E5%B8%AD%E4%B8%89%E5%B0%8F%E6%97%B6/" title="人间缺席三小时"><img src="https://pic.imgdb.cn/item/62472e0827f86abb2a73dfe7.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="人间缺席三小时"/></a><div class="content"><a class="title" href="/2021/12/10/%E4%BA%BA%E9%97%B4%E7%BC%BA%E5%B8%AD%E4%B8%89%E5%B0%8F%E6%97%B6/" title="人间缺席三小时">人间缺席三小时</a><time datetime="2021-12-09T16:00:00.000Z" title="Created 2021-12-10 00:00:00">2021-12-10</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('https://pic.imgdb.cn/item/62472e6b27f86abb2a748a52.jpg')"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2022 By chloe默成</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
