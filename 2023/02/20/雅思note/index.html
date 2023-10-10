@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>IELTS Note（口语） | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">IELTS Note（口语）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/IELTS/">IELTS</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <table>
+<thead>
+<tr>
+<th>Index</th>
+<th>English</th>
+<th>Chinese</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1</td>
+<td>handouts</td>
+<td>讲义</td>
+</tr>
+<tr>
+<td>2</td>
+<td>written work</td>
+<td>书面的作业</td>
+</tr>
+<tr>
+<td>3</td>
+<td>oral work</td>
+<td>口头作业</td>
+</tr>
+<tr>
+<td>4</td>
+<td>post box</td>
+<td>邮箱</td>
+</tr>
+<tr>
+<td>5</td>
+<td>price includes</td>
+<td>xx is free (如包邮)</td>
+</tr>
+<tr>
+<td>6</td>
+<td>drink and refreshments</td>
+<td>饮料和零食</td>
+</tr>
+<tr>
+<td>7</td>
+<td>hairdresser</td>
+<td>理发师</td>
+</tr>
+<tr>
+<td>8</td>
+<td>barber</td>
+<td>(男子)理发师</td>
+</tr>
+<tr>
+<td>9</td>
+<td>theme park</td>
+<td>主题公园</td>
+</tr>
+<tr>
+<td>10</td>
+<td>campsite</td>
+<td>野营的营地</td>
+</tr>
+<tr>
+<td>11</td>
+<td>lodge</td>
+<td>乡间小屋&#x2F;小舍</td>
+</tr>
+<tr>
+<td>12</td>
+<td>ladders</td>
+<td>梯子</td>
+</tr>
+<tr>
+<td>13</td>
+<td>lambs</td>
+<td>小羔羊</td>
+</tr>
+<tr>
+<td>14</td>
+<td>slang</td>
+<td>俚语</td>
+</tr>
+<tr>
+<td>15</td>
+<td>vegetation</td>
+<td>植被</td>
+</tr>
+<tr>
+<td>16</td>
+<td>mammals</td>
+<td>哺乳动物</td>
+</tr>
+<tr>
+<td>17</td>
+<td>giant</td>
+<td>巨大的</td>
+</tr>
+<tr>
+<td>18</td>
+<td>remit</td>
+<td>职责范围（使命）</td>
+</tr>
+<tr>
+<td>19</td>
+<td>out-of-bounds</td>
+<td>禁止入内的（adj.）</td>
+</tr>
+<tr>
+<td>20</td>
+<td>address the problem</td>
+<td>解决问题</td>
+</tr>
+<tr>
+<td>21</td>
+<td>winding road</td>
+<td>蜿蜒小路</td>
+</tr>
+</tbody></table>
+<p>part4—语料库第三章背记！！！</p>
+<h2 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h2><p>负面表达—建议—否定句</p>
+<p>否定句：I don’t think &#x2F; I’m not sure&#x2F; I’ve no idea &#x2F; I’m afraid </p>
+<p>建议：I’m appreciate that &#x2F; It would be nice of you &#x2F;have to &#x2F; need to &#x2F;ask &#x2F;require &#x2F; please be warned that &#x2F;</p>
+<p>注意如果问main的内容，则注意听有没有not only ,but …,答案一定是but转折后面的内容</p>
+<p>part4</p>
+<p>答案前置（我理解的答案前置是原文的顺序和题目中的语序不同，即可能出现被动、定语从句）</p>
+<p>被动</p>
+<p>定语从句</p>
+<p>状语从句（状语可以放在句子的任何地方）</p>
+<p>介词短语</p>
+<p>接触物类</p>
+<h4 id="地图题"><a href="#地图题" class="headerlink" title="地图题"></a>地图题</h4><table>
+<thead>
+<tr>
+<th>无替换</th>
+<th>熟悉图上各个名词</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>听</td>
+<td>方位，地名，动作</td>
+</tr>
+<tr>
+<td></td>
+<td>footpath 小路（虚线）窄路</td>
+</tr>
+<tr>
+<td></td>
+<td>corridors 走廊</td>
+</tr>
+<tr>
+<td></td>
+<td>hectares 公顷</td>
+</tr>
+<tr>
+<td></td>
+<td>largest section&#x3D;largest part 最大的部分</td>
+</tr>
+<tr>
+<td></td>
+<td>further east(注意连读)再往东</td>
+</tr>
+<tr>
+<td></td>
+<td>sharp bend 急转弯</td>
+</tr>
+<tr>
+<td></td>
+<td>on the river banka 在河边</td>
+</tr>
+<tr>
+<td></td>
+<td>lead from pond to river 从池塘通向小河</td>
+</tr>
+<tr>
+<td></td>
+<td>go north from 从这里向北走</td>
+</tr>
+<tr>
+<td></td>
+<td>right-angle 直角的adj</td>
+</tr>
+<tr>
+<td>动作</td>
+<td>follow this route 沿着这条小路</td>
+</tr>
+<tr>
+<td></td>
+<td>come into 来到</td>
+</tr>
+<tr>
+<td></td>
+<td>lead off the path 随这条小路延生</td>
+</tr>
+<tr>
+<td></td>
+<td>go out of 走出</td>
+</tr>
+<tr>
+<td></td>
+<td>past this lane 穿过这条道</td>
+</tr>
+<tr>
+<td></td>
+<td>junction 交汇处  intersection corner</td>
+</tr>
+<tr>
+<td></td>
+<td>go towards 是朝着xx走,不一定走到&#x2F;走过，很可能在之前就转弯了   in the direction of</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="口语"><a href="#口语" class="headerlink" title="口语"></a>口语</h1><h2 id="part1"><a href="#part1" class="headerlink" title="part1"></a>part1</h2><table>
+<thead>
+<tr>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>原因＋例子</td>
+</tr>
+<tr>
+<td>具体化（列举、分情况说）</td>
+</tr>
+<tr>
+<td>对比（Compared to A ,B is more &#x2F; I used to xxx ,but now xxx）</td>
+</tr>
+<tr>
+<td>具体描述（别人：功能、特点：大小&#x2F;外观）</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody></table>
+<br/>
+
+<table>
+<thead>
+<tr>
+<th>Chinese</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>美味</td>
+<td>delicious  tasty  yummy<br />capture my heart 俘获了我的心</td>
+</tr>
+<tr>
+<td></td>
+<td>gorgeous 美丽的</td>
+</tr>
+<tr>
+<td></td>
+<td>charming 迷人的、</td>
+</tr>
+<tr>
+<td></td>
+<td>tight-knit 关系紧密的</td>
+</tr>
+<tr>
+<td></td>
+<td>don’t give it a second thought 不用刻意考虑</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>keep me in a good mood  让我保持好心情</td>
+</tr>
+<tr>
+<td></td>
+<td>primary school 小学   junior high school 初中  senior high school高中</td>
+</tr>
+<tr>
+<td></td>
+<td>mind-blowing 令人震撼的</td>
+</tr>
+<tr>
+<td></td>
+<td>movie buff 电影爱好者</td>
+</tr>
+<tr>
+<td></td>
+<td>Rom-com 浪漫喜剧 action movies 动作电影</td>
+</tr>
+<tr>
+<td></td>
+<td>science film 科幻片</td>
+</tr>
+<tr>
+<td></td>
+<td>流浪地球：The wandering earth</td>
+</tr>
+<tr>
+<td></td>
+<td>cheap &#x2F; more affordable</td>
+</tr>
+<tr>
+<td>⌛make plan on weekends</td>
+<td>laid back &#x2F; casual 悠闲的，随意的</td>
+</tr>
+<tr>
+<td></td>
+<td>in a more free form  以更自由的形式</td>
+</tr>
+<tr>
+<td></td>
+<td>on weekdays在工作日   efficient and productive</td>
+</tr>
+<tr>
+<td></td>
+<td>limited edition 限量版</td>
+</tr>
+<tr>
+<td></td>
+<td>pocket 衣服包</td>
+</tr>
+<tr>
+<td></td>
+<td>normally 通常情况下</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>sentimental value 情感价值</td>
+</tr>
+<tr>
+<td></td>
+<td>a reminder of 什么的提示品   a symbol of</td>
+</tr>
+<tr>
+<td></td>
+<td>bracelet 手链，on my 18th birthday</td>
+</tr>
+<tr>
+<td></td>
+<td>best wishes 美好的祝福</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>seldom rarely 很少</td>
+</tr>
+<tr>
+<td>👄</td>
+<td>necklace 项链、earrings 耳环、bracelet</td>
+</tr>
+<tr>
+<td></td>
+<td>reunite with my family</td>
+</tr>
+<tr>
+<td></td>
+<td>live on campus 住校 the key to xxx</td>
+</tr>
+<tr>
+<td></td>
+<td>I really miss that time</td>
+</tr>
+<tr>
+<td></td>
+<td>Grocery store ：food vendors; small clothes shop ;barber</td>
+</tr>
+<tr>
+<td></td>
+<td>around the community 社区周围</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>car horn 汽车喇叭 &#x2F; engine noise &#x2F;construction noise &#x2F;</td>
+</tr>
+<tr>
+<td></td>
+<td>people talking</td>
+</tr>
+<tr>
+<td></td>
+<td>dogs barking &#x2F; birds chirping &#x2F; wind blowing &#x2F;</td>
+</tr>
+<tr>
+<td></td>
+<td>engine revving 发动机发动(原型rev) 、the tires on the road 、brakes squealing 刹车片的沙沙</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>have a sweet tooth 喜欢甜食</td>
+</tr>
+<tr>
+<td></td>
+<td>texture 口感 flavor 风味</td>
+</tr>
+<tr>
+<td></td>
+<td>easy to style 含好搭配</td>
+</tr>
+<tr>
+<td></td>
+<td>dress up 盛装打扮的 &#x2F;dress down 简单打扮的 they  can  dress up or down</td>
+</tr>
+<tr>
+<td></td>
+<td>（can）be a hassle 是一个麻烦</td>
+</tr>
+<tr>
+<td></td>
+<td>unbecoming adj.不相配的，不合身的（衣服） becoming 相配的</td>
+</tr>
+<tr>
+<td></td>
+<td>locksmith 锁匠</td>
+</tr>
+<tr>
+<td></td>
+<td>careless 粗心的</td>
+</tr>
+<tr>
+<td></td>
+<td>the key <strong>to</strong> xxx</td>
+</tr>
+<tr>
+<td></td>
+<td>packaging 包装 exquisite adj.精美的</td>
+</tr>
+<tr>
+<td></td>
+<td>occasion 场合</td>
+</tr>
+<tr>
+<td>时态（将来时）</td>
+<td>will &#x2F; be going to &#x2F; be planning to</td>
+</tr>
+</tbody></table>
+<h3 id="part1-连接填空词"><a href="#part1-连接填空词" class="headerlink" title="part1 连接填空词"></a>part1 连接填空词</h3><table>
+<thead>
+<tr>
+<th>连接词</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>All right, let’s dive right in… <br />好吧，让我们接着聊聊xxx<br />what you may not know is that xx<br />你可能不知道xxx<br />you know what I mean ?</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>（缓冲句）</td>
+<td>句首可使用一些副词：Obviously  fortunately  luckily &#x2F; more importantly &#x2F;surprisingly</td>
+</tr>
+<tr>
+<td></td>
+<td>How can I put it ? 怎么说<br />Oh ，that’s a tough &#x2F;ticky&#x2F;difficult one<br />Well , good question. Let me think about it .<br />It was long time ago</td>
+</tr>
+<tr>
+<td></td>
+<td>I’ve never thought about it before ,but I guess</td>
+</tr>
+<tr>
+<td></td>
+<td>from time to time 偶尔</td>
+</tr>
+<tr>
+<td></td>
+<td>is supposed to 应该会</td>
+</tr>
+<tr>
+<td></td>
+<td>get closer to xxx</td>
+</tr>
+<tr>
+<td></td>
+<td>I guess it probably because</td>
+</tr>
+<tr>
+<td></td>
+<td>just like me, 就像我</td>
+</tr>
+<tr>
+<td>看情况</td>
+<td>It’s up to&#x2F;depends on  different circumstances</td>
+</tr>
+<tr>
+<td></td>
+<td>how often — the frequency is up to different circumstances</td>
+</tr>
+<tr>
+<td></td>
+<td>I think it’s yes and no.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h2 id="PART-2"><a href="#PART-2" class="headerlink" title="PART 2"></a>PART 2</h2><h3 id="思路及连接词"><a href="#思路及连接词" class="headerlink" title="思路及连接词"></a>思路及连接词</h3><p>评价题目   拆分四个问题   流畅度  连接词</p>
+<table>
+<thead>
+<tr>
+<th>答题思路</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>评价题目</td>
+<td>（正面：好问题&#x2F; 负面：tricky question棘手的问题 I’ve never experienced it before）</td>
+</tr>
+<tr>
+<td></td>
+<td>there is a thousand of ,  hard to pick one that really fits the bill (适合)</td>
+</tr>
+<tr>
+<td>拆分成四个part1</td>
+<td>常用连接词：talking about \speaking of \ when it comes to \ as for 当谈到xxx</td>
+</tr>
+<tr>
+<td>注意连接词</td>
+<td></td>
+</tr>
+<tr>
+<td>开头</td>
+<td>I guess i could talk about &#x2F; I would like to talk about &#x2F; well ,after a minute of thinking and hesitation</td>
+</tr>
+<tr>
+<td>中间</td>
+<td>well ，what else can i say &#x2F; oh one thing i have to mention is</td>
+</tr>
+<tr>
+<td>结尾</td>
+<td>feelings &#x2F; to sum up ;to cut long story short 长话短说</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>时态，人称，基本正确    </p>
+<p>高分语法：现完（have been doing  ）</p>
+<p>​    				虚拟语气 （🎀🎀🎀）</p>
+<p>​					倒装</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230110165319786.png" alt="image-20230110165319786" style="zoom:80%;" />
+
+<h3 id="五大话题语料库"><a href="#五大话题语料库" class="headerlink" title="五大话题语料库"></a>五大话题语料库</h3><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>书</strong>：When Breath Becomes Air</td>
+<td>In 2013, Paul was suddenly diagnosed with lung cancer 。 From then on, he began to record the rest of his life as both a doctor and a patient, reflecting on medicine and humanity.</td>
+</tr>
+<tr>
+<td></td>
+<td><strong>Paul Kalanithi</strong>  was an American <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Neurosurgery">neurosurgeon</a> and writer. His book When Breath Becomes Air is a <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Memoir">memoir</a> about his life and illness with lung cancer</td>
+</tr>
+<tr>
+<td></td>
+<td>contains deep thoughts on 包含什么的深思</td>
+</tr>
+<tr>
+<td></td>
+<td>humanity 人性</td>
+</tr>
+<tr>
+<td></td>
+<td>valuable insights 宝贵的启发</td>
+</tr>
+<tr>
+<td></td>
+<td>live in the moment 活在当下 enjoy the moment 享受当下</td>
+</tr>
+<tr>
+<td></td>
+<td>There is always a moment, a cusp, when experience you gathered is worn down by the day-to-day life. you will find that we are never so wise as when we live in the moment.</td>
+</tr>
+<tr>
+<td><strong>电影</strong>：The hunger games</td>
+<td>2012   typical dystopian 反乌托邦的  have watched it for 3 times</td>
+</tr>
+<tr>
+<td>女主（heroine）</td>
+<td>Katniss(performed by Jennifer Lawrence)</td>
+</tr>
+<tr>
+<td></td>
+<td>selfless 无私的 warm 温暖的 (代替妹妹去xxx) tribute （贡品）</td>
+</tr>
+<tr>
+<td></td>
+<td>brave &#x2F; courageous 勇敢的 (射击技术)</td>
+</tr>
+<tr>
+<td></td>
+<td>brutal 残暴的</td>
+</tr>
+<tr>
+<td></td>
+<td>will power  意志力 courage 勇气</td>
+</tr>
+<tr>
+<td></td>
+<td>a role model for all women</td>
+</tr>
+<tr>
+<td><strong>地点</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>(不好的)环境污染(补充)删掉🎭</td>
+<td>be filled with smog and dust</td>
+</tr>
+<tr>
+<td></td>
+<td>dust weather 沙尘天气 sand storm 沙尘暴 toxins 毒素</td>
+</tr>
+<tr>
+<td></td>
+<td>pollution index 污染指数</td>
+</tr>
+<tr>
+<td></td>
+<td>especially high 及其高</td>
+</tr>
+<tr>
+<td></td>
+<td>suffocated frustrated &#x2F;  bustling</td>
+</tr>
+<tr>
+<td></td>
+<td>stark contrast to 鲜明的对比</td>
+</tr>
+<tr>
+<td></td>
+<td>the most significant &#x3D; the most important 最重要的</td>
+</tr>
+<tr>
+<td>小场所</td>
+<td>balcony      big soft armchair 又大又软的安乐椅</td>
+</tr>
+<tr>
+<td></td>
+<td>lie against 躺</td>
+</tr>
+<tr>
+<td></td>
+<td>one glass of tea   warm sunshine</td>
+</tr>
+<tr>
+<td></td>
+<td>enjoy the reading time</td>
+</tr>
+<tr>
+<td>分支话题：弹钢琴</td>
+<td>totally immerse in the world of music</td>
+</tr>
+<tr>
+<td></td>
+<td>forget about the annoyance 忘记烦恼</td>
+</tr>
+<tr>
+<td><strong>专业领域</strong></td>
+<td>software engineering 软件工程</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><strong>电子产品</strong> kindle删掉🎭</td>
+<td>Amazon official Bookstore</td>
+</tr>
+<tr>
+<td></td>
+<td>Chinese books</td>
+</tr>
+<tr>
+<td><strong>一顿饭</strong>🙅‍</td>
+<td>美食语料</td>
+</tr>
+<tr>
+<td><strong>历史时刻</strong>🙅‍</td>
+<td>新中国成立 when our country was founded in 1949</td>
+</tr>
+<tr>
+<td></td>
+<td>marked the beginning of a new area</td>
+</tr>
+<tr>
+<td></td>
+<td>pivotal moment 关键的转折点</td>
+</tr>
+<tr>
+<td></td>
+<td>多年的艰苦奋斗——-years of hard graft.（our success was the result of years of hard graft by generations of Chinese.）</td>
+</tr>
+<tr>
+<td></td>
+<td>generations of Chinese 一代又一代中国人</td>
+</tr>
+<tr>
+<td></td>
+<td>bitter life 苦日子</td>
+</tr>
+<tr>
+<td></td>
+<td>What a wonderful life we have now 我们现在的生活是多么美好</td>
+</tr>
+<tr>
+<td></td>
+<td>how fortunate we are 我们是多么幸运</td>
+</tr>
+<tr>
+<td></td>
+<td>remember the history and cherish the present  铭记历史珍惜现在</td>
+</tr>
+</tbody></table>
+<br/>	
+
+<table>
+<thead>
+<tr>
+<th>人物题</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>role model 榜样</td>
+</tr>
+<tr>
+<td></td>
+<td>a great sense of humor  有幽默感</td>
+</tr>
+<tr>
+<td></td>
+<td>caring 体贴的 &#x2F; warm-hearted 热心肠的</td>
+</tr>
+<tr>
+<td></td>
+<td>putting xx needs ahead of his own 把某人的需求放在自己前面</td>
+</tr>
+<tr>
+<td>感受类形容词</td>
+<td>gorgeous , stunning ,incredible , phenomenal  (very good ,nice ,beautiful )</td>
+</tr>
+<tr>
+<td>俚语</td>
+<td>over the moon (I was over the moon,when I received xx) (adj.非常高兴的，巨高兴)</td>
+</tr>
+<tr>
+<td></td>
+<td>a pain in the neck (adj.令人讨厌、发狂的)</td>
+</tr>
+<tr>
+<td></td>
+<td>fits the bill</td>
+</tr>
+</tbody></table>
+<h2 id="Part-3"><a href="#Part-3" class="headerlink" title="Part 3"></a>Part 3</h2><table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td></td>
+<td>every coin has two sides 事物都有两面性</td>
+</tr>
+<tr>
+<td></td>
+<td>That’s the point of … 这是…的重点</td>
+</tr>
+<tr>
+<td></td>
+<td>time-consuming (抖音) anonymous 匿名的</td>
+</tr>
+<tr>
+<td></td>
+<td>to name a few , there are (列举一些)</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20230115102417809.png" alt="image-20230115102417809" style="zoom:80%;" /></td>
+</tr>
+</tbody></table>
+<br/>
+
+<table>
+<thead>
+<tr>
+<th>句型</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>make sb do 让某人做 （make me change my mind）  make sb adj 使某人xxx(make me happy&#x2F;sad)</td>
+</tr>
+<tr>
+<td>主语+is not only n&#x2F;adj , but also n&#x2F;adj</td>
+</tr>
+<tr>
+<td>I believe it can make me more xxx &#x2F; it makes me more</td>
+</tr>
+<tr>
+<td>It made me realize that xxx 让我意识到</td>
+</tr>
+<tr>
+<td></td>
+</tr>
+</tbody></table>
+<h1 id="写作"><a href="#写作" class="headerlink" title="写作"></a>写作</h1><table>
+<thead>
+<tr>
+<th>Chinese</th>
+<th>English</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>老龄化</td>
+<td>人口寿命：life expectancy</td>
+</tr>
+<tr>
+<td></td>
+<td>demographic change 人口结构的变化</td>
+</tr>
+<tr>
+<td></td>
+<td>aging of population &#x2F; aging problem 人口老龄化</td>
+</tr>
+<tr>
+<td></td>
+<td>impart sb about sth &#x2F; impart sth to sb 向某人传授</td>
+</tr>
+<tr>
+<td></td>
+<td>police officers 警员</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>连接词</td>
+<td>Moreover,</td>
+</tr>
+<tr>
+<td></td>
+<td>For example,完整句子</td>
+</tr>
+<tr>
+<td></td>
+<td>such as 、like、including、involving</td>
+</tr>
+<tr>
+<td>害怕</td>
+<td>have the courage to  attempt  dont be afarid of making mistakes</td>
+</tr>
+</tbody></table>
+<h1 id="阅读"><a href="#阅读" class="headerlink" title="阅读"></a>阅读</h1><p>passage3 &#x2F; list of heading &#x2F; 段落匹配题目—平行阅读，不一定按照顺序</p>
+<br/>
+
+<h1 id="评分标准："><a href="#评分标准：" class="headerlink" title="评分标准："></a>评分标准：</h1><p>内容上的点子不用多么巧妙，可以很简单，最重要是表达上，语法，单词，呈现与描述上</p>
+<h2 id="①整体上"><a href="#①整体上" class="headerlink" title="①整体上"></a>①整体上</h2><p> 流利—多说</p>
+<p>连贯性：结构清晰，内容连贯<br>（tips:first,second , third）<br>对于句子之间注意因果关系</p>
+<h2 id="②-词汇"><a href="#②-词汇" class="headerlink" title="② 词汇"></a>② 词汇</h2><p>多样性！<br>—-同义词的变化，如like &#x2F;be fond of &#x2F; be keen on &#x2F;be crazy   about&#x2F; <strong>be fascinated by</strong> &#x2F;<strong>have great passion for</strong> &#x2F;be into &#x2F;<strong>I really dig……</strong></p>
+<p>灵活性！细节化表述，而不是笼统的good,nice ,comfortable</p>
+<p>准确性！<strong>natural spoken English</strong> </p>
+<h2 id="③-语法上：语法多样性"><a href="#③-语法上：语法多样性" class="headerlink" title="③ 语法上：语法多样性"></a>③ 语法上：语法多样性</h2><p> 避免全是简单句：<br>添加成分：状语，定语，同位语丰富内容<br>使用连词,实现复合句<br>使用从句—-<strong>目的是使逻辑更加地道与清晰，而不是使其复杂化，这是写作的任务</strong></p>
+<h2 id="④-发音特点"><a href="#④-发音特点" class="headerlink" title="④ 发音特点"></a>④ 发音特点</h2><p>连读、缩读，各种声音现象，其实就是地道好听嘛</p>
+<br/>
+
+<h1 id="答题思路"><a href="#答题思路" class="headerlink" title="答题思路"></a>答题思路</h1><p>观点</p>
+<p>原因</p>
+<p>具体例子support</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/02/20/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">Activation function</a>
+            
+            
+            <a class="next" rel="next" href="/2023/01/27/%E5%A4%9C%E7%9A%84%E5%BA%8F%E6%9B%B2/">夜的序曲</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>基本云计算通识 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">基本云计算通识</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/PM/">PM</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>经过互联网那个数十年的发展，我们可以将计算机科学领域那些旧有的经验和技术进行简单化和自动化处理，<strong>高度抽象为各种按需使用的服务</strong>，以传统的本地部署软件或商业软件产业难以竞争的价格对外提供，要求用户购买，管理硬件的时代已经过去了。</p>
+<blockquote>
+<p>就好像人们过去饮水需要开凿水井，而现在有自来水公司为我们提供水服务，打开水龙头即可取水，我们随开随用按需付费，还省去了开凿水井的费用（类比购买硬件）。</p>
+<p>对于云使用者，云计算是：一种按需购买&#x2F;使用的服务，价格低廉，且无需购买硬件设施、就想我们的水，电使用一样，即开即用。</p>
+</blockquote>
+<p>要想以服务的方式交付资源，核心是”资源池化“，可以理解为获取底层硬件的虚拟映像，打通形成资源池（根据虚拟化的对象不同，可以形成计算资源池&#x2F;存储资源池等）。</p>
+<p>消费者可以通过网络，以一种<strong>按需供应的软件</strong>解决方案<strong>（SaaS，软件即服务）</strong>，或者以一个无需任何基础设施成本便可<strong>快速开发可扩展解决方案的平台（PaaS,平台即服务）</strong>，或是以一种可基于较低成本构建可扩展解决方案的虚拟数据中心<strong>（IaaS，基础设施即服务）</strong>来满足自己的需求。</p>
+<blockquote>
+<p>在传统开发中，IT团队必须安装和管理服务器，部署和调试软件，确保使用了适当的安全等级，按部就班的对操作系统，固件，应用程序，数据库打上补丁，相比之下，每种云服务模式都对这些任务提供了不同程度的抽象自动化，从而使消费者能够减少在基础设施管理上花费的时间，专注于自身的业务。</p>
+</blockquote>
+<p>综上我们可以总结出云计算的五大特性：<strong>网络接入</strong>、<strong>资源池化</strong>、<strong>弹性（即可多，可少）</strong>、<strong>按需使用</strong>、<strong>按量付费</strong></p>
+<h2 id="关于IaaS"><a href="#关于IaaS" class="headerlink" title="关于IaaS"></a>关于IaaS</h2><p>IaaS即基础设施即服务，那么它提供的到底是什么服务？</p>
+<ul>
+<li>管理和维护物理数据中心和物理基础设施的服务</li>
+</ul>
+<blockquote>
+<p>IaaS服务订阅者可以通过基于代码（CLI方式）或者网页的管理控制台（就像我们公司的OrionX GUI）进行访问和自动化部署。使用者只需要安装我们的软件作为第三方解决方案，不再需要为物理基础设施的管理劳心劳力。</p>
+</blockquote>
+<p>IaaS又有三种不同的部署方法：</p>
+<p>公有、本地私有、托管私有</p>
+<ul>
+<li>公有云是最常见的，比如阿里云为个人提供非常便宜的云服务器，就是一种常见的公有云服务。他们有能力去运维一个很大很大的数据中心，然后提供基础设施资源（如服务器、存储等）给公众。</li>
+<li><strong>本地私有云部署，不依靠云提供商，基于原有的企业基础设施，帮助企业构建IaaS功能。（这也是我们公司在做的，主要就是依靠虚拟化GPU的独有能力，实现资源池化）</strong></li>
+<li>托管私有云依靠云服务提供商来提供基础设施，但是他们的资源并不会和其他消费者共享。</li>
+</ul>
+<p>可以看出只有公有云部署才是真正将云计算的特性发挥到极致。私有云牺牲了，弹性，按需使用并付费等特性，因为私有云中可访问的资源总量取决于内部所购买和管理的基础设施总和。</p>
+<p>ps: 如果希望了解更多的关于云计算的知识，推荐阅读这本：《让云落地：云计算服务模式（SaaS、PaaS和IaaS）设计决策》,关于其他的知识，比如什么是容器，k8s，虚拟机，各有什么联系和区别，可以在后续有疑问时自行查询。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/03/20/%E4%BA%A7%E5%93%81%202.0/">PM General Knowledge 2</a>
+            
+            
+            <a class="next" rel="next" href="/2023/02/20/cloud%20platform%20%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/">cloud platform 竞品分析</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>帮助中心文档导出pdf（需求分析） | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">帮助中心文档导出pdf（需求分析）</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">April 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/PM/">PM</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h2 id="需求背景"><a href="#需求背景" class="headerlink" title="需求背景"></a>需求背景</h2><h3 id="原始需求"><a href="#原始需求" class="headerlink" title="原始需求"></a>原始需求</h3><p>售前人员可能无法查看到帮助中心的文档</p>
+<p>现有的导出不符合手册规范，缺少封面，目录等信息</p>
+<h3 id="需求目标"><a href="#需求目标" class="headerlink" title="需求目标"></a>需求目标</h3><p>提供帮助中心文档下载功能，以指定的，规范的格式导出为离线文档，代替原有的操作手册，供相关人员使用</p>
+<blockquote>
+<p>说明：该功能不做GUI呈现，是一个内部功能，操作人一般为开发人员，一般一个迭代导出一次，导出后提供给售前。</p>
+</blockquote>
+<h2 id="核心问题"><a href="#核心问题" class="headerlink" title="核心问题"></a>核心问题</h2><p>网页上的帮助文档是分散的，随点随看，因此帮助中心文档导出时，需要做的重要的一点是：通过有层次的标题及子标题，把原本分散的文档连接在一起。</p>
+<h2 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h2><h3 id="新版GUI用户操作手册的定义"><a href="#新版GUI用户操作手册的定义" class="headerlink" title="新版GUI用户操作手册的定义"></a>新版GUI用户操作手册的定义</h3><p>新版用操的结构：由三部分构成，封面、目录、正文。封面：（可能需要重新设计）。正文由帮助中心导出得到（具体的导出规则见下方）</p>
+<h3 id="新版CLI用户操作手册的定义"><a href="#新版CLI用户操作手册的定义" class="headerlink" title="新版CLI用户操作手册的定义"></a>新版CLI用户操作手册的定义</h3><p>结构：由三部分构成，封面、目录、正文。正文由帮助中心导出得到。</p>
+<h3 id="导出规则定义"><a href="#导出规则定义" class="headerlink" title="导出规则定义"></a>导出规则定义</h3><p><strong>模块与子模块</strong>：模块指帮助中心目录中所示的12个一级列表项，每个模块的二级列表项为其子模块。</p>
+<p>导出时，所有的模块名将作为二级标题添加到文档中，子模块名作为三级标题添加到文档中，子模块内的各标题，从四级标题开始，根据其在帮助中心原文档的层级，依次降低级别。</p>
+<blockquote>
+<p>关于这里为什么从二级标题开始添加？ </p>
+<p>一级标题已被用于全文的总标题”oCenter GUI 用户操作手册“&#x2F;“oCenter CLI 用户操作手册”</p>
+</blockquote>
+<p> <img src="https://p.ipic.vip/bqw25k.png"></p>
+<p>特殊情况：若该模块下，只有一个子模块，<strong>则直接将子模块名称作为二级标题添加到文档中</strong>，即忽略掉模块名称，提升阅读体验。（后续对帮助中心进行改进）</p>
+<p><strong>标题序号定义</strong>：</p>
+<p>序号一律使用阿拉伯数字连续编号，不同层次的数字之间加下圆点相隔，最后数字不添加标点。</p>
+<p>第一级——1</p>
+<p>第二级——1.1</p>
+<p>第三级——1.1.1</p>
+<p>第四级——1.1.1.1</p>
+<p>再小层次：使用（1）</p>
+<h3 id="导出格式定义"><a href="#导出格式定义" class="headerlink" title="导出格式定义"></a>导出格式定义</h3><h4 id="正文部分"><a href="#正文部分" class="headerlink" title="正文部分"></a>正文部分</h4><ul>
+<li>导出时需要为文档添加总标题（一级标题）**”oCenter GUI 用户操作手册“&#x2F;“oCenter CLI 用户操作手册”**，添加位置在目录之后，另起一页，引领所有正文</li>
+<li>需要另起一页的地方：<ul>
+<li>目录</li>
+<li>每个模块的内容需要另起一页展示，即所有二级标题需要另起一页展示，其各级子标题及内容之间接续展示，不再留空白。如下图示例</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://p.ipic.vip/9drrxw.png"></p>
+<p>序号后应该空一字距再写标题</p>
+<ul>
+<li>每一页均需要添加页码 ${pageNo} &#x2F; ${totalPages}，底部，居中</li>
+<li>常见问题(FAQ模块)问题标题，不使用链接</li>
+<li>文档中的锚点跳转，在pdf中实现(研发待调研)</li>
+<li>其余部分保持md默认导出格式：如正文字体，引用处字体（斜体），图片，代码块</li>
+</ul>
+<h4 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h4><p>保持md默认导出格式，添加页码（右对齐），“目录”二字采用一级标题</p>
+<h3 id="导出后命名"><a href="#导出后命名" class="headerlink" title="导出后命名"></a>导出后命名</h3><p>oCenter CLI文档导出后命名为”oCenter CLI 用户操作手册 vx.x.x“</p>
+<p>oCenter GUI文档导出后命名为”oCenter GUI 用户操作手册 vx.x.x“</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/06/20/C++/">C++ note</a>
+            
+            
+            <a class="next" rel="next" href="/2023/03/20/%E4%BA%A7%E5%93%81%202.0/">PM General Knowledge 2</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

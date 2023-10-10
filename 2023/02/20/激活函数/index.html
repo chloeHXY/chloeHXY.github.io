@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>Activation function | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Activation function</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Technology/">Technology</a>
+                            
+                                <a href="/categories/Technology/Language/">Language</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p><strong>（1）Sigmoid</strong></p>
+<p><strong>该函数是将取值为 (−∞,+∞) 的数映射到（0，1）之间。</strong></p>
+<p><img src="https://pic3.zhimg.com/80/v2-6d270094dd26062aba91e249e35286be_720w.webp" alt="img"></p>
+<p>sigmiod函数公式</p>
+<p><img src="https://pic3.zhimg.com/80/v2-5b98a93316717bcc3241646b8da4ab5e_720w.webp" alt="img"></p>
+<p>函数图像</p>
+<p>对于sigmoid函数的求导推导为：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-43db8342deb1ec3fe0c7843725feca98_720w.webp" alt="img"></p>
+<blockquote>
+<p>可以看出当Z值非常大或者非常小的时候，会导致其导数趋近于零，也就是权重的梯度趋近于零，即<strong>梯度消失</strong>。</p>
+</blockquote>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">def</span> <span class="title function_">sigmoid_function</span>(<span class="params">z</span>):</span><br><span class="line">    fz = []</span><br><span class="line">    <span class="keyword">for</span> num <span class="keyword">in</span> z:</span><br><span class="line">        fz.append(<span class="number">1</span>/(<span class="number">1</span> + math.exp(-num)))</span><br><span class="line">    <span class="keyword">return</span> fz</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    z = np.arange(-<span class="number">10</span>, <span class="number">10</span>, <span class="number">0.01</span>)</span><br><span class="line">    fz = sigmoid_function(z)</span><br><span class="line">    plt.title(<span class="string">&#x27;Sigmoid Function&#x27;</span>)</span><br><span class="line">    plt.xlabel(<span class="string">&#x27;z&#x27;</span>)</span><br><span class="line">    plt.ylabel(<span class="string">&#x27;σ(z)&#x27;</span>)</span><br><span class="line">    plt.plot(z, fz)</span><br><span class="line">    plt.show()</span><br></pre></td></tr></table></figure>
+
+<p><strong>（2）tanh</strong></p>
+<p><strong>相较于sigmoid函数要常见一些，该函数是将取值为 (−∞,+∞) 的数映射到 (−1,1) 之间。</strong></p>
+<p><img src="https://pic1.zhimg.com/80/v2-68298521190df0a8e5b9b7f8efd08b0c_720w.webp" alt="img"></p>
+<p>tanh函数公式</p>
+<p><img src="https://pic4.zhimg.com/80/v2-dbd5482bb55c05632cded1aed222955b_720w.webp" alt="img"></p>
+<p>tanh函数图像：在 0 附近很短一段区域内可看做线性的。由于tanh函数均值为 0 ，因此弥补了sigmoid函数均值为 0.5 的缺点。</p>
+<p>对于tanh函数的求导推导为：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-4156863a87215e6829b1b5cd2b1416b1_720w.webp" alt="img"></p>
+<blockquote>
+<p>tanh函数的缺点同sigmoid函数的第一个缺点一样，当 z 很大或很小时，g′(z) 接近于 0 ，会导致梯度很小，权重更新非常缓慢，即<strong>梯度消失</strong>问题。</p>
+</blockquote>
+<p><strong>（3）ReLU</strong></p>
+<p><strong>又称为修正线性单元（Rectified Linear Unit），是一种分段线性函数，其弥补了sigmoid函数以及tanh函数的梯度消失问题。</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-a57293261942576b2ff76832ee32dee7_720w.webp" alt="img"></p>
+<p>Relu函数公式</p>
+<p><img src="https://pic1.zhimg.com/80/v2-3edb6345df16de27885be3867e7c6078_720w.webp" alt="img"></p>
+<p>Relu函数图像</p>
+<p>对于ReLU函数的求导为：</p>
+<p><img src="https://pic2.zhimg.com/80/v2-6fbe50023a01b53fe525ed6a0fb85629_720w.webp" alt="img"></p>
+<blockquote>
+<p><strong>ReLU函数的优点：</strong><br>\1. 在输入为正数的时候（对于大多数输入 z 空间来说），不存在梯度消失问题。<br>\2. 计算速度要快很多。ReLU函数只有线性关系，不管是前向传播还是反向传播，都比sigmod和tanh要快很多。（sigmod和tanh要计算指数，计算速度会比较慢）<br><strong>ReLU函数的缺点：</strong><br>当输入为负时，梯度为0，会产生<strong>梯度消失</strong>问题。</p>
+</blockquote>
+<p><strong>（4）Leaky ReLU</strong></p>
+<p><strong>它是一种对ReLU函数改进的函数，又称为PReLU函数。</strong></p>
+<p><img src="https://pic4.zhimg.com/80/v2-395fa7dc6b1c9b4fe083d3434ff4cc33_720w.webp" alt="img"></p>
+<p>PReLU函数公式，其中 a 取值在 (0,1) 之间。</p>
+<p><img src="https://pic4.zhimg.com/80/v2-baba6eb8baae9ee12b8b5ffc46e4e2b7_720w.webp" alt="img"></p>
+<p>PReLU函数图像</p>
+<p>Leaky ReLU函数的导数为：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-3027c269309757487948c4a7264bfea8_720w.webp" alt="img"></p>
+<blockquote>
+<p>Leaky ReLU函数解决了ReLU函数在<strong>输入为负的情况下产生的梯度消失问题</strong>。</p>
+</blockquote>
+<p><strong>（5）Swish</strong></p>
+<p>Swish 在深层模型上的效果优于 ReLU。可以看做是<strong>介于线性函数与ReLU函数之间的平滑函数</strong>.例如，仅仅使用 Swish 单元替换 ReLU 就能把 Mobile NASNetA 在 ImageNet 上的 top-1 分类准确率提高 0.9%，Inception-ResNet-v 的分类准确率提高 0.6%。</p>
+<p>函数公式： f(x)&#x3D;x∗sigmiod(βx)</p>
+<p>β是个常数或可训练的参数，Swish 具备<strong>无上界有下界、平滑、非单调</strong>的特性。</p>
+<p><img src="https://pic2.zhimg.com/80/v2-b3f1d39717e8d02a1a56a20b543abd45_720w.webp" alt="img"></p>
+<p>Swish函数图像</p>
+<p><strong>（6）Mish</strong></p>
+<p>一种自正则的非单调神经激活函数，平滑的激活函数允许更好的信息深入神经网络，从而得到更好的准确性和泛化。根据论文实验，该函数在最终准确度上比Swish(+0.494%)和ReLU(+ 1.671%)都有提高。</p>
+<p><a href="https://link.zhihu.com/?target=https://arxiv.org/vc/arxiv/papers/1908/1908.08681v1.pdf">Mish: A Self Regularized Non-Monotonic Neural Activation Functionarxiv.org&#x2F;vc&#x2F;arxiv&#x2F;papers&#x2F;1908&#x2F;1908.08681v1.pdf</a></p>
+<p>函数公式： f(x)&#x3D;x∗tanh(ln(1+ex))</p>
+<p>函数图像：</p>
+<p><img src="https://pic1.zhimg.com/80/v2-fc22b992e5a24df294b5d40211e33ecc_720w.webp" alt="img"></p>
+<p>Mish函数图像</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># torch中代码实现</span></span><br><span class="line"><span class="keyword">class</span> <span class="title class_">Mish</span>(nn.Module):</span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">__init__</span>(<span class="params">self</span>):</span><br><span class="line">        <span class="built_in">super</span>().__init__()</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">&quot;Mish avtivation loaded...&quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">def</span> <span class="title function_">forward</span>(<span class="params">self,x</span>):</span><br><span class="line">        x = x * (torch.tanh(F.softplus(x)))</span><br><span class="line">        <span class="keyword">return</span> x</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、常见激活函数对比"><a href="#三、常见激活函数对比" class="headerlink" title="三、常见激活函数对比"></a>三、常见激活函数对比</h2><p><img src="https://pic4.zhimg.com/80/v2-fadf101bd844539325467a489e65abdf_720w.webp" alt="img"></p>
+<h3 id="SoftMax函数"><a href="#SoftMax函数" class="headerlink" title="SoftMax函数"></a>SoftMax函数</h3><h5 id="含义"><a href="#含义" class="headerlink" title="含义"></a>含义</h5><p>不再<strong>唯一的确定</strong>某一个最大值，而是为<strong>每个输出</strong>分类的结果都赋予一个概率值，表示属于每个类别的可能性。</p>
+<h5 id="数学本质"><a href="#数学本质" class="headerlink" title="数学本质"></a>数学本质</h5><p>将各个输出节点（对神经网络模型来说是输出结点，对这个函数来说其实是输入）的输出值范围映射到[0, 1]，并且约束各个输出节点的输出值的和为1的函数</p>
+<p>输出一个n维向量</p>
+<h5 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h5><p><img src="https://p.ipic.vip/5vfasn.jpg"></p>
+<p>其中 Zi 为第i个节点的输出值，C为输出节点的个数，即分类的类别个数。</p>
+<h5 id="引入指数函数的优缺点"><a href="#引入指数函数的优缺点" class="headerlink" title="引入指数函数的优缺点"></a>引入指数函数的优缺点</h5><p>指数函数曲线呈现递增趋势，最重要的是斜率逐渐增大，也就是说在x轴上一个很小的变化，可以导致y轴上很大的变化。这种函数曲线能够将输出的数值拉开距离。</p>
+<p>当 zi 值非常大的话，计算得到的数值也会变的非常大，数值可能会溢出。</p>
+<h5 id="损失函数的本质"><a href="#损失函数的本质" class="headerlink" title="损失函数的本质"></a>损失函数的本质</h5><p>通过输出值构造一个函数，使该函数越小，描摹的情况越有利。</p>
+<p>首先你得明确最好情况下，我们的输出值应该时怎么样的，或者说怎样的输出值情况，说明我们的学习效果很好。</p>
+<h5 id="从输入输出的角度理解SoftMax函数"><a href="#从输入输出的角度理解SoftMax函数" class="headerlink" title="从输入输出的角度理解SoftMax函数"></a>从输入输出的角度理解SoftMax函数</h5><p>输入:X (一个m*n的Tensor )</p>
+<p>softmax(X)操作步骤：</p>
+<p>1.所有元素指数化 X_exp&#x3D;X.exp()</p>
+<p>2.按行求和 partition&#x3D;X_exp.sum(dim&#x3D;1, keepdim&#x3D;True)</p>
+<p>3.每个元素除其所在行的行和 X_exp &#x2F; partition（广播机制）</p>
+<p>将各行数据转换为合法的概率分布（每行元素和为1且非负）</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/02/20/%E4%BA%A7%E5%93%81/">PM General Knowledge</a>
+            
+            
+            <a class="next" rel="next" href="/2023/02/20/%E9%9B%85%E6%80%9Dnote/">IELTS Note（口语）</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

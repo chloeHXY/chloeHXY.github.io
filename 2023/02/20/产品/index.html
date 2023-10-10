@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>PM General Knowledge | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">PM General Knowledge</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">February 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/PM/">PM</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>🌳职责：</p>
+<p>明确产品定位，了解用户需求，输出可被设计、开发、测试等同事理解的需求文档。</p>
+<p>“找 比 试”</p>
+<p>定义：产品是满足人们<strong>实际需求</strong>的<strong>有形商品或无形服务（社交服务、互动娱乐服务）</strong></p>
+<p>🌊用户为本，科技向善</p>
+<p>🌊在面对一个海量用户产品的时候，产品经理必须是一部分人的“白痴”，同时又是另一部分人“最精明的保护者”。</p>
+<p>🌊所以我们的目光永远不要只聚焦于自己，对周边生态的变化保持敏感，才有可能让我们发现潜在的危机或机会。</p>
+<p>🌊也许未来的方向，同样也在我们的目标范围内，但由于当前产品的发展阶段不适合大跃进时，我们就需要聚焦产品的阶段性目标，保持自身的理性与克制。</p>
+<p>🌊“每个产品，均有自己的边界，一个产品应对一个核心诉求，解决一个核心问题。”</p>
+<p>🌊“我认为‘感觉’是知识的聚集，学识越广博，越是能衍生多样的可能性，知识如纸，‘感觉’如画……过去的积蓄，即你所掌握的‘不惊人的东西’越多，创意的土壤越广。”</p>
+<p>🌊产品经理要始终围绕解决用户遇到的问题，满足用户的需求来工作，而不是满足产品经理个人的喜好。</p>
+<p>🌊产品经理要时刻清楚自己当下是在解决什么用户、在什么地方、遇到的什么问题，而不要堆砌功能。与当下要解决的问题无关的功能特性，不单会增加产品开发的成本和周期，还可能给用户带来不必要的干扰。</p>
+<p>🌊在符合相关法规及保护好用户隐私的基础上，增加用户行为的监控埋点,用户所做的，往往比他所说的，更能代表他的真实想法</p>
+<p>🌊敏捷开发宣言第三条：经常性的交付可以工作的软件，交付的间隔可以从几周到几个月，交付的时间间隔越短越好</p>
+<p>🌊好的团队，是动态迭代成长起来的，小团队通过<strong>小步快跑，持续兴奋</strong>，可以在迭代中获得成长，并在迭代中壮大。（3到5个人做不好的事情，如果换30到50个人来做，大概率会做得更烂）</p>
+<h6 id="一些名词"><a href="#一些名词" class="headerlink" title="一些名词"></a>一些名词</h6><p>🍎 灰度测试：<em>灰度测试，就是在某项产品或应用正式发布前，选择特定人群试用，逐步扩大其试用者数量，以便及时发现和纠正其中的问题，由“灰”到“黑”。</em></p>
+<p>🍎 灰度策略包括：</p>
+<p>🍎 DAU :  日活跃用户数 MAU: 月活跃用户数 FAQ:常见问题解答</p>
+<h2 id="【前置】产品的分类"><a href="#【前置】产品的分类" class="headerlink" title="【前置】产品的分类"></a>【前置】产品的分类</h2><p>竞争型产品(初始态)、创新型产品、口碑型产品和平台型产品（终极形态）</p>
+<p>平台型产品上又可以生长出新的竞争型产品，进入下一轮循环。</p>
+<p>对于创新型和口碑型产品，最关键的任务是“极致的用户体验”；而竞争型和平台型产品最关键的任务，则是“稳定的发布节奏”，也就是“快”。</p>
+<h3 id="用户"><a href="#用户" class="headerlink" title="用户"></a>用户</h3><h4 id="一切以用户价值为依归"><a href="#一切以用户价值为依归" class="headerlink" title="一切以用户价值为依归"></a><strong>一切以用户价值为依归</strong></h4><h4 id="定义用户"><a href="#定义用户" class="headerlink" title="定义用户"></a>定义用户</h4><blockquote>
+<p>什么人 在哪里 干什么</p>
+</blockquote>
+<p>目标用户、用户场景、用户喜好</p>
+<h4 id="接近用户"><a href="#接近用户" class="headerlink" title="接近用户"></a>接近用户</h4><p>aim:持续获得真实的用户画像</p>
+<p>访谈、回复发帖、阅读反馈、问卷、走进场景、分析数据</p>
+<h4 id="了解用户"><a href="#了解用户" class="headerlink" title="了解用户"></a>了解用户</h4><p>站在用户角度思考，了解各种用户群的需求</p>
+<h4 id="变成用户"><a href="#变成用户" class="headerlink" title="变成用户"></a>变成用户</h4><p>从产品经理–&gt;产品外行，才能真正的变成用户</p>
+<p>本身就是忠实用户，洞察人性？</p>
+<blockquote>
+<p><em>如何定义产品的目标用户</em>、</p>
+<p><em>通过哪些方式接近用户</em></p>
+<p><em>较好的了解用户和变成用户的方法</em></p>
+</blockquote>
+<h3 id="定位"><a href="#定位" class="headerlink" title="定位"></a>定位</h3><p>确定产品定位需要关注三个维度：</p>
+<p>1.为用户提供了什么功能   2.竞品角度   3.自身特性</p>
+<p>初始阶段：</p>
+<p>定位一定要清晰且聚焦，围绕定位的核心需求持续打磨，才能迅速抢占市场</p>
+<p>随着市场切入越来越深，产品边界扩大，用户群种类和属性也会变化，定位也会转型</p>
+<p>始终记住自己的核心定位</p>
+<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><blockquote>
+<p><em>需求来源于用户，但不止于用户</em></p>
+<p><em>有些需求用户自己也不清楚</em>，pm<em>需要以更大的格局搜集和分析数据</em></p>
+<p><em>需求的本质往往可以归结于人的心理诉求</em></p>
+<p>如何获取需求？–深入用户群</p>
+<p>面对众多的需求？如何分析&#x2F;排序需求？ </p>
+</blockquote>
+<h3 id="时机"><a href="#时机" class="headerlink" title="时机"></a>时机</h3><p>行业环境（国家政策）</p>
+<p>用户认知</p>
+<p>能力储备</p>
+<blockquote>
+<p>借力热点时机，进行产品推广</p>
+</blockquote>
+<h3 id="匠心"><a href="#匠心" class="headerlink" title="匠心"></a>匠心</h3><p>1.专注</p>
+<p>专注于核心能力的持续打磨，核心能力可以分为（功能和性能两个部分）</p>
+<p>2.坚持产品信念不动摇</p>
+<p>3.关注细节，追求极致的用户体验（心理感受）</p>
+<blockquote>
+<p>用户体验做到极致就是创新</p>
+</blockquote>
+<h3 id="危机感"><a href="#危机感" class="headerlink" title="危机感"></a>危机感</h3><p>1.技术突破、周围环境的变换</p>
+<blockquote>
+<p>技术的突破会对产品形态产生巨大的影响</p>
+<p>经济发展、政策调整、社会舆论</p>
+</blockquote>
+<p>2.用户的变化</p>
+<blockquote>
+<p>核心用户群的变化</p>
+<p>用户核心需求的变化</p>
+</blockquote>
+<p>3.团队自身能力的局限</p>
+<blockquote>
+<p>真正的危机从来不会从外部袭来，只有我们漠视用户体验的时候才会出现真正的危机</p>
+</blockquote>
+<p>way：对时代、技术、潮流、用户群有敏锐的嗅觉，主动自我变革，跳出舒适圈</p>
+<h3 id="合作"><a href="#合作" class="headerlink" title="合作"></a>合作</h3><p>团队内部如何合作？</p>
+<blockquote>
+<p>如何明确目标？</p>
+<p>smart原则：specific measurable available relevant time-based 具体的可以用数据衡量的、可以实现的、有时间限制的目标</p>
+<p>团队内部明确各自的职责，方便回溯</p>
+<p>通过定期例会共享信息，明确进度，了解进展。阶段成果及时分享，共享激励</p>
+</blockquote>
+<h3 id="商业化"><a href="#商业化" class="headerlink" title="商业化"></a>商业化</h3><blockquote>
+<p>广告的引入促成了广告主、自媒体、用户的三方共赢</p>
+<p>从产品的设计之初就要考虑可能的商业模式、兼顾市场和成本</p>
+</blockquote>
+<p>实现商业化的前提：产品为用户提供价值</p>
+<p>实现商业化的手段：针对不同场景挖掘商业模式（直接售卖、增值服务、流量变现）</p>
+<p>商业化的底线：不能牺牲用户体验</p>
+<pre><code>                         “让商业存在于无形之中”
+</code></pre>
+<h3 id="市场竞争格局—红海-蓝海"><a href="#市场竞争格局—红海-蓝海" class="headerlink" title="市场竞争格局—红海&#x2F;蓝海"></a>市场竞争格局—红海&#x2F;蓝海</h3><blockquote>
+<p>红海，代表现存的产业、已知的市场空间。在红海中，每个产业的界限已经被划定，竞争规则也被人们熟知，随着市场空间越来越拥挤，利润获取和规模增长也越来越难，残酷的竞争让市场鲜血淋漓，因此称为“红”海</p>
+<p>蓝海，代表目前还不存在的产业、未知的或还没被开发的市场空间。在蓝海中，游戏的规则还没制定，人们不把精力放在竞争上，而是专注创造新的需求，这就意味着高利润和高增长的机会。</p>
+<p>ps：蓝海还有一种危机在于，你可能很早就看到了没被满足的用户需求，早早入场，但正由于过早，可能市场还不成熟，例如没有合适的商业模式，或者用户还没得到有效的教育</p>
+</blockquote>
+<p>对于红海市场，你就得充分利用自身的优势，建立差异化特征，积累辨识度，<strong>占领用户心智，让用户从万千产品中选择你</strong></p>
+<h3 id="需求规划"><a href="#需求规划" class="headerlink" title="需求规划"></a>需求规划</h3><p>1.确定目标</p>
+<p>不同产品场景下的目标不同，一般有以下四类：</p>
+<p>①极致满足用户需求（最初级的目标）②留住用户、落地生根 ③巩固商业模式 ④建设产品的影响力</p>
+<p><strong>围绕目标，初步过滤需求，粗筛</strong></p>
+<p>2.围绕目标，对每个需求进行<strong>价值评估</strong></p>
+<p>精筛(哪些是一定要做的)</p>
+<blockquote>
+<p>价值评估方法：定性评估、定量评估</p>
+<p>定量评估包括：</p>
+<p>A&#x2F;B Test 对照试验</p>
+<p>产品自身价值评估体系（制定自己的评估方法）</p>
+</blockquote>
+<p>3.基于目标，制定Roadmap</p>
+<p>(确定先做什么，后做什么)</p>
+<p>阶段目标指定,即版本规划，<strong>合理有序地把需求安排在各个版本的里程碑里，就非常关键了</strong></p>
+<p><strong>微信早期版本规划</strong> 图片缺失</p>
+<h3 id="把握节奏"><a href="#把握节奏" class="headerlink" title="把握节奏"></a>把握节奏</h3><p>🌊产品需求规划宏观上是静态的，而在具体执行中，微观上却是动态的</p>
+<p>节奏评估：UIC综合评估法（建立紧急、重要、成本的四象限决策模型）</p>
+<h3 id="产品设计"><a href="#产品设计" class="headerlink" title="产品设计"></a>产品设计</h3><p>产品设计的思维方式</p>
+<h3 id="运营"><a href="#运营" class="headerlink" title="运营"></a>运营</h3><p>不同产品阶段，运营工作的重点各不相同：</p>
+<p>产品初创期，运营重点是要帮产品验证价值，制造口碑；（用一个最小化的可行性产品去验证市场）</p>
+<p>产品成长期，运营重点是找到好的增长模式，大规模引入用户；</p>
+<p>产品成熟期，运营重点是关注留存活跃以及商业变现，最大化凸显产品的价值；</p>
+<p>产品衰退期，运营工作需要挖掘产品新的价值卖点，找到新的增长点</p>
+<h5 id="运营-拉动产品增长"><a href="#运营-拉动产品增长" class="headerlink" title="运营-拉动产品增长"></a>运营-拉动产品增长</h5><p>1.抓住热点</p>
+<p>节日热点、时事热点</p>
+<p>2.裂变（社交关系链–&gt;提升分享欲–&gt;分享成为利己行为(物质激励、精神激励)）</p>
+<p>3.跨界合作找突破</p>
+<p>🌼：一些sparks</p>
+<p>功能耦合（借助公司已有的优势）</p>
+<p>借助互联网特性，构筑产品闭环，是实现用户增长的一个重要手段。在已有用户上进行扩散，获得更多的种子用户，开启下一个闭环。</p>
+<p>提升社区的活跃度有助于用户粘性的增强</p>
+<p>对生活充满观察力，观察生活的细节，现实中的细心，精神上的敏感</p>
+<p>专注！做产品，资源永远是有限的，要集中资源，对核心功能进行持续打磨</p>
+<p>需求会随着用户认知的深入而演变</p>
+<p>技术只有提前预研，才能在技术爆发时跟上时代的步伐</p>
+<p>pm应该关心技术的变革，政策的变化，舆论的导向。从运营数据中判段是否蕴含用户的变迁</p>
+<p>只要能在整个生态链路中降低成本或提升效率，这都可能成为潜在的变革机会</p>
+<p>新的生态角色，意味着更多的连接，意味着新的场景与诉求，也意味着潜在增长的空间与机会。</p>
+<p>关于飞书？</p>
+<p>🌙 Todo:</p>
+<p>公司旗下的具体产品</p>
+<p>给你一个支付场景，如何迅速的了解信息？</p>
+<p>银行项目是如何实现高并发功能的</p>
+<p>现在周围还有哪些需要抓住的时机</p>
+<p>用过哪些独具匠心的产品，如何在面临短期业务压力的同时兼具匠心</p>
+<p>下一个可能出现的颠覆性危机是什么？可以做些什么避免危机</p>
+<p>产品经理和项目经理有什么区别</p>
+<p>你所负责或关注的产品从长远来看需要什么资源</p>
+<p>🐎如何快速梳理一个产品的功能？</p>
+<p>分用户场景陈列，如智能会议室管理系统，分为普通员工和管理人员，接着在分使用场景陈列，参会前使用，参会时使用</p>
+<p>普-参前</p>
+<p>查询、预约、浏览</p>
+<p>普-参中</p>
+<p>进入会议室–门禁</p>
+<p>管</p>
+<p>基础信息设置 增删改查</p>
+<p>预约审批</p>
+<h1 id="一些常用的分析方法"><a href="#一些常用的分析方法" class="headerlink" title="一些常用的分析方法"></a>一些常用的分析方法</h1><h3 id="PEST"><a href="#PEST" class="headerlink" title="PEST"></a>PEST</h3><p>PEST宏观背景分析法：political政治  &#x2F;  economic经济  &#x2F;  social社会  &#x2F;   technological技术</p>
+<p>提供了拆解宏观世界的各个维度，减少思维漏洞</p>
+<p><img src="https://p.ipic.vip/or0pv0.jpg"></p>
+<h3 id="SWOT"><a href="#SWOT" class="headerlink" title="SWOT"></a>SWOT</h3><p>综合企业内部和外部条件，进行分析</p>
+<p>四个维度：优势、劣势、机会、威胁</p>
+<p><img src="https://p.ipic.vip/cb6jd4.jpg"></p>
+<h3 id="KANO模型"><a href="#KANO模型" class="headerlink" title="KANO模型"></a>KANO模型</h3><p>用于用户对新功能(需求)的评估</p>
+<p><img src="https://p.ipic.vip/jnwouh.jpg"></p>
+<h3 id="MVP"><a href="#MVP" class="headerlink" title="MVP"></a>MVP</h3><p>最小可行性产品</p>
+<h1 id="常用图表"><a href="#常用图表" class="headerlink" title="常用图表"></a>常用图表</h1><p>功能结构图</p>
+<blockquote>
+<p>梳理功能<strong>模块</strong>，明确哪些要做，哪些不做，形容一个功能点时建议多采用“动词+名词”的语言描述形式</p>
+<p>避免后期出现功能遗漏的情况，也可供研发团队思考是否可实现</p>
+<p>就是一个按照模块分类的<strong>功能list</strong></p>
+</blockquote>
+<p>信息结构图</p>
+<blockquote>
+<p>为后端建表提供参考</p>
+</blockquote>
+<p>产品结构图</p>
+<h1 id="智能会议室管理-预约系统"><a href="#智能会议室管理-预约系统" class="headerlink" title="智能会议室管理&#x2F;预约系统"></a>智能会议室管理&#x2F;预约系统</h1><h6 id="用户-1"><a href="#用户-1" class="headerlink" title="用户"></a>用户</h6><p>有会议需求的公司员工及管理人员</p>
+<p>场景：公司</p>
+<p>用户喜好：简洁高效</p>
+<h6 id="如何完成竞品调研？-功能拆解"><a href="#如何完成竞品调研？-功能拆解" class="headerlink" title="如何完成竞品调研？(功能拆解)"></a>如何完成竞品调研？(功能拆解)</h6><p>竞品间的对比分析</p>
+<table>
+<thead>
+<tr>
+<th>厂商</th>
+<th>c查询</th>
+<th>c预定</th>
+<th>r审批</th>
+<th>自动通知</th>
+<th>图表显示</th>
+<th>独立信息发布</th>
+<th>会议服务呼叫</th>
+<th>数据可视化</th>
+<th>会议白名单</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>C-MRM(秀群)</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>天天预约</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<p>1.明确用户群体，产品核心功能，对同类产品进行竞品分析，提出产品特性点，确定产品定位</p>
+<p>2.完成需求规划，制定roadmap</p>
+<p>3.产品设计，原型图绘制，UI设计</p>
+<p>4.不断迭代，同研发同学思考创新点，融合热点技术</p>
+<p>提高了门槛，降低了产品的</p>
+<p>不经过初筛，是不能登入这个系统，从而不能看见银行的贷款产品，提高了安全性与权限性，但是降低了曝光度，不管什么用户都必须登录才能看到产品的陈列，两全—&gt;单独的广告页，可见但不能预约&#x2F;购买，秒杀活动做了宣传</p>
+<h6 id="管理端"><a href="#管理端" class="headerlink" title="管理端"></a>管理端</h6><p>基础信息维护（增、删、改、查）</p>
+<p>会议预定审批</p>
+<p>数据可视化</p>
+<h6 id="预订端"><a href="#预订端" class="headerlink" title="预订端"></a>预订端</h6><p>会议室查询、预定</p>
+<h6 id="一体机终端设备"><a href="#一体机终端设备" class="headerlink" title="一体机终端设备"></a>一体机终端设备</h6><p>人脸识别智能门禁</p>
+<h5 id="定位确定"><a href="#定位确定" class="headerlink" title="定位确定"></a>定位确定</h5><p>核心能力：预定与管理</p>
+<p>产品特性：智能化：①大屏数据可视化，收集会议数据，帮助企业总结分析②智能门禁，人脸识别</p>
+<p>定位：具备数据分析的会议室<strong>预定、管理</strong>工具</p>
+<h1 id="关于知识图谱"><a href="#关于知识图谱" class="headerlink" title="关于知识图谱"></a>关于知识图谱</h1><p>知识图谱：通过不同知识的关联性形成一个<strong>网状的知识结构</strong>（关系网络）</p>
+<p>知识图谱要解决的是这样一个问题：如何能够<strong>更好的描述复杂、多样和海量的互联网数据</strong>？</p>
+<p>知识图谱由于其数据包含实体、属性、关系(三元组模式)等，常见的关系型数据库诸如MySQL之类不能很好的体现数据的这些特点，因此知识图谱数据的存储一般是采用<strong>图数据库</strong>（Graph Databases）</p>
+<p>图数据库是一种非关系型数据库（NoSQL）, 因为图是一种非结构化数据，不像我们常见的行数据是结构化数据，ps: Neo4j是其中最为常见的图数据库，以Cypher为数据查询语言。</p>
+<blockquote>
+<p><em>结构化数据：<strong>结构化数据指的是由二维表结构来逻辑表达和实现的数据，严格遵循数据格式与长度规范，也称作为行数据</strong>，特点为：数据以行为单位，一行数据表示一个实体的信息，每一行数据的属性是相同的</em></p>
+</blockquote>
+<h1 id="数据分析"><a href="#数据分析" class="headerlink" title="数据分析"></a>数据分析</h1><blockquote>
+<p>增长黑客：<em>硅谷新兴商业方法论，通过创造性的方法，科学的<strong>数据分析工具</strong>，用极低的费用在短时间内吸引数百万计的用户的<strong>增长方法</strong></em></p>
+</blockquote>
+<p>北极星指标？</p>
+<p>唯一重要，衡量<em>产品给予用户</em>的价值的指标</p>
+<blockquote>
+<p>一个优秀的北极星指标可以尽可能真实的反映产品的状况，潜力，发展趋势</p>
+<p>确立北极星指标可以使各团队对产品的表现有一个<strong>统一</strong>且准确的认识，朝着一个方向看齐，力也往一处使！</p>
+</blockquote>
+<p>群星指标？</p>
+<p>3-5个对北极星指标有影响的互补二级指标</p>
+<h2 id="常见指标介绍"><a href="#常见指标介绍" class="headerlink" title="常见指标介绍"></a>常见指标介绍</h2><table>
+<thead>
+<tr>
+<th>NAME</th>
+<th>MEANING</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>CAC</td>
+<td>用户获取成本，即花了多少钱获取了一个新用户</td>
+</tr>
+<tr>
+<td>LTV 或 CLV</td>
+<td>用户生命周期总价值</td>
+</tr>
+<tr>
+<td>GMV</td>
+<td>商品交易总额（包含拍下但是未支付的订单）</td>
+</tr>
+<tr>
+<td>ROI</td>
+<td>投资回报率</td>
+</tr>
+<tr>
+<td>CR</td>
+<td>转化率&#x3D;conversion &#x2F; click</td>
+</tr>
+<tr>
+<td>conversion</td>
+<td>完成转化行为的次数</td>
+</tr>
+<tr>
+<td>CPA</td>
+<td>不仅是看到，还要完成有效行为的成本，如按点击付费：CPC  <br />按销售额付费 CPS<br />按使用时长付费 CPT</td>
+</tr>
+<tr>
+<td>CPM</td>
+<td>让1000个人看到需要花费的成本—&gt;宣传预算 cost per mille</td>
+</tr>
+<tr>
+<td><strong>产品数据指标</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>PV (page view)</td>
+<td>页面浏览量（新闻内容阅读量&#x2F;网页打开量）</td>
+</tr>
+<tr>
+<td>click</td>
+<td>点击量</td>
+</tr>
+<tr>
+<td>CTR</td>
+<td>点击率&#x3D;click&#x2F;PV&#x3D;点击的人÷看到的人 （click through rate）</td>
+</tr>
+<tr>
+<td>UV（unique visitor）</td>
+<td>独立ip访客数，记录周期一般为1天</td>
+</tr>
+<tr>
+<td>PR(佩奇 rank)</td>
+<td>谷歌网页级别</td>
+</tr>
+<tr>
+<td>平均访问时长</td>
+<td>停留总时间 &#x2F; 总访问次数</td>
+</tr>
+<tr>
+<td><strong>用户数据指标</strong></td>
+<td></td>
+</tr>
+<tr>
+<td>ARPU</td>
+<td>Average Revenue Per User<br />平均每一用户能带来的收入 xx元&#x2F;户<br />ARPU值取决于业务收入和用户数量两部分<br />ARPU值也反映企业的用户结构状况，当用户构成中高端客户占的比重越高，ARPU值就越高<br /><strong>用于评估用户质量</strong></td>
+</tr>
+<tr>
+<td>用户流失率</td>
+<td>流失人数(曾经使用过，在足够长的时间不再使用) &#x2F; 总用户数<br /><em>在具体分析相关数据前，需要尽量排除干扰数据，选定合理对比数据，例如某些活动时激增的用户数，其本身具有相当不稳定性，不能作为用户流失数的基数，又例如一些低质量用户，其本身就无法反映出产品的真实情况，应该定期清理掉此类用户，来保证用户数据的有效性。</em></td>
+</tr>
+<tr>
+<td>活跃用户</td>
+<td>DAU   MAU</td>
+</tr>
+<tr>
+<td>次日留存率、周留存率</td>
+<td>X月X天新增用户中，第2天还登录的用户数 ÷ X月X天新增用户总数</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+</tr>
+</tbody></table>
+<h4 id="1-产品的拉新指标"><a href="#1-产品的拉新指标" class="headerlink" title="1.产品的拉新指标"></a>1.产品的拉新指标</h4><p>用户接触一个新产品的历程：</p>
+<p>看到	 | 进一步了解 |   不错不错，可以下载	|    注册	</p>
+<p>浏览量 | 点击量		 |             下载量		        |     新增用户</p>
+<h4 id="2-产品活跃指标"><a href="#2-产品活跃指标" class="headerlink" title="2.产品活跃指标"></a>2.产品活跃指标</h4><p>用户使用一个产品的历程&#x2F;深度：</p>
+<p>打开	|	停留	   	|     完成某些特定的动作</p>
+<p>启动	|	在线时长	|	 活跃</p>
+<h4 id="3-产品留存指标"><a href="#3-产品留存指标" class="headerlink" title="3.产品留存指标"></a>3.产品留存指标</h4><p>用户接触产品一段时间后，要么留下来，要么离开&#x2F;流失掉</p>
+<h4 id="4-产品转换指标（商业价值）"><a href="#4-产品转换指标（商业价值）" class="headerlink" title="4.产品转换指标（商业价值）"></a>4.产品转换指标（商业价值）</h4><h5 id="4-1-交易类产品转化指标（电商类：淘宝、京东）"><a href="#4-1-交易类产品转化指标（电商类：淘宝、京东）" class="headerlink" title="4.1 交易类产品转化指标（电商类：淘宝、京东）"></a>4.1 交易类产品转化指标（电商类：淘宝、京东）</h5><p>用户场景：</p>
+<p>下单	支付	是否退款	复购</p>
+<h5 id="4-2-社区型产品转化指标（比如说知乎、豆瓣、小红书等）"><a href="#4-2-社区型产品转化指标（比如说知乎、豆瓣、小红书等）" class="headerlink" title="4.2 社区型产品转化指标（比如说知乎、豆瓣、小红书等）"></a>4.2 <strong>社区型产品转化指标</strong>（比如说知乎、豆瓣、小红书等）</h5><p>引导用户生成内容，总目标：不断生成内容的活跃社区！</p>
+<p>仅浏览 		产生其他互动行为如评论、分享等		自己上传内容（up）</p>
+<h5 id="4-3-企业型产品转化指标（比如说印象笔记）"><a href="#4-3-企业型产品转化指标（比如说印象笔记）" class="headerlink" title="4.3 企业型产品转化指标（比如说印象笔记）"></a>4.3 企业型产品转化指标（比如说印象笔记）</h5><p>这类产品中的用户有几个形态：</p>
+<p>来（免费）体验的用户		付费的用户		升级为更贵服务的用户</p>
+<h4 id="5-产品的传播指标"><a href="#5-产品的传播指标" class="headerlink" title="5. 产品的传播指标"></a>5. 产品的传播指标</h4><p>K因子&#x3D;拉到新人数 &#x2F; 原来用户数</p>
+<h3 id="产品运营"><a href="#产品运营" class="headerlink" title="产品运营"></a>产品运营</h3><h4 id="产品数据"><a href="#产品数据" class="headerlink" title="产品数据"></a>产品数据</h4><h5 id="APP数据-–易观千帆-酷传"><a href="#APP数据-–易观千帆-酷传" class="headerlink" title="APP数据 –易观千帆&#x2F;酷传"></a>APP数据 –易观千帆&#x2F;酷传</h5><p>日活&#x2F;月活	下载量（意向用户）	启动次数	使用时长（用户粘性）</p>
+<h5 id="APP情况"><a href="#APP情况" class="headerlink" title="APP情况"></a>APP情况</h5><p>产品排名	渗透率（该产品的用户量 &#x2F; 该市场下总用户体量）</p>
+<h5 id="用户画像"><a href="#用户画像" class="headerlink" title="用户画像"></a>用户画像</h5><p>性别	年龄	区域热度	偏好   (可以在移动观象台查看)</p>
+<h4 id="运营情况"><a href="#运营情况" class="headerlink" title="运营情况"></a>运营情况</h4><h5 id="用户量级趋势"><a href="#用户量级趋势" class="headerlink" title="用户量级趋势"></a>用户量级趋势</h5><h5 id="产品运营情况"><a href="#产品运营情况" class="headerlink" title="产品运营情况"></a>产品运营情况</h5><p>产品更新、内容更新、运营活动、相关公告</p>
+<h5 id="产品营收情况"><a href="#产品营收情况" class="headerlink" title="产品营收情况"></a>产品营收情况</h5><p>会员、广告、商城、佣金</p>
+<h5 id=""><a href="#" class="headerlink" title=""></a></h5>
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/02/20/cloud%20platform%20%E7%AB%9E%E5%93%81%E5%88%86%E6%9E%90/">cloud platform 竞品分析</a>
+            
+            
+            <a class="next" rel="next" href="/2023/02/20/%E6%BF%80%E6%B4%BB%E5%87%BD%E6%95%B0/">Activation function</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

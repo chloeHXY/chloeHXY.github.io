@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>PM General Knowledge 2 | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">PM General Knowledge 2</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">March 20, 2023&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/PM/">PM</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>🗽优秀的人在哪里都会大放异彩</p>
+<p>🗽让你走的更远的，是你的认知而不是某个岗位</p>
+<h1 id="产品经理的分类"><a href="#产品经理的分类" class="headerlink" title="产品经理的分类"></a>产品经理的分类</h1><h2 id="按照工作内容划分"><a href="#按照工作内容划分" class="headerlink" title="按照工作内容划分"></a>按照工作内容划分</h2><h3 id="用户体验型pm"><a href="#用户体验型pm" class="headerlink" title="用户体验型pm"></a>用户体验型pm</h3><p>c端，注重用户体验，思考怎么提升用户体验，占领用户心智</p>
+<p>深刻挖掘用户需求，定义用户价值，用户嗅觉良好，提炼用户的真实需求</p>
+<h3 id="商业产品经理"><a href="#商业产品经理" class="headerlink" title="商业产品经理"></a>商业产品经理</h3><p>熟悉商业模式，更注重商业变现</p>
+<h3 id="数据产品经理"><a href="#数据产品经理" class="headerlink" title="数据产品经理"></a>数据产品经理</h3><h3 id="策略产品经理"><a href="#策略产品经理" class="headerlink" title="策略产品经理"></a>策略产品经理</h3><h2 id="按照服务用户分类"><a href="#按照服务用户分类" class="headerlink" title="按照服务用户分类"></a>按照服务用户分类</h2><h3 id="C端PM"><a href="#C端PM" class="headerlink" title="C端PM"></a>C端PM</h3><p>为普通消费者用户提供满足其日常生活的产品或者服务，提供生活的便利性</p>
+<p>注重需求把控和用户体验</p>
+<blockquote>
+<p>日常工作</p>
+<p>📅产品研发阶段：</p>
+<p><strong>规划阶段</strong>（商业计划书、产品整体规划、撰写需求调研报告、撰写竞品分析报告）、<strong>产品策划阶段</strong>（画原型、功能结构图、信息结构图、产品结构图、撰写需求说明文档……）、<strong>开发阶段</strong>（需求评审、需求沟通）、<strong>验收上线阶段</strong>（配合产品测试、产品验收上线、产品操作手册）</p>
+<p>📅产品运营阶段：</p>
+<p>配合运营活动策划、产品运营数据分析、</p>
+</blockquote>
+<h3 id="B端pm"><a href="#B端pm" class="headerlink" title="B端pm"></a>B端pm</h3><p>服务企业，熟悉公司及行业的业务，即业务流程的梳理和逻辑，在<strong>特定行业工作场景</strong>下，提高企业日常工作效率，是一些管理工具&#x2F;解决方案</p>
+<p>OA CRM</p>
+<blockquote>
+<p>日常工作</p>
+<p><strong>📅产品研发阶段：</strong></p>
+<p><strong>规划阶段</strong>（商业计划书、产品整体规划、撰写需求调研报告、撰写竞品分析报告）、<strong>产品策划阶段</strong>（画原型、功能结构图、信息结构图、产品结构图、撰写需求说明文档……）、<strong>开发阶段</strong>（需求评审、需求沟通）、<strong>验收上线阶段</strong>（配合产品测试、产品验收上线、⭐<u><em>搭建产品演示环境</em></u>、<u><em>撰写一系列验收材料</em></u>）</p>
+<p>ps:验收材料包括：产品功能说明、产品技术白皮书、产品功能清单，产品售卖策略，交付部署边界、演示操作说明</p>
+<p>主要是让我们的销售、宣传伙伴可以看懂我们的产品</p>
+<p><strong>📅售前阶段：</strong></p>
+<p>产品培训、产品演示、技术支持、配合售前客户调研、配合写标书</p>
+<p><strong>📅交付阶段：</strong></p>
+<p>配合交付调研</p>
+<p>配合进行交付部署</p>
+</blockquote>
+<h4 id="主要区别："><a href="#主要区别：" class="headerlink" title="主要区别："></a>主要区别：</h4><p>job上的区别：其实研发阶段的工作大多是相似的，一个是深度参与运营，一个是深度参与售前与交付</p>
+<p>盈利模式的区别：c端（广告、增值服务如vip、直接付费形式）</p>
+<p>b端（直接向客户收取费用）</p>
+<hr>
+<h3 id="前端产品经理"><a href="#前端产品经理" class="headerlink" title="前端产品经理"></a>前端产品经理</h3><h3 id="后台产品经理"><a href="#后台产品经理" class="headerlink" title="后台产品经理"></a>后台产品经理</h3><p>服务于自己企业的运营和业务人员，如淘宝后台的pm负责订单中心，商品中心等后台产品设计</p>
+<h2 id="按行业分"><a href="#按行业分" class="headerlink" title="按行业分"></a>按行业分</h2><h4 id="金融产品经理"><a href="#金融产品经理" class="headerlink" title="金融产品经理"></a>金融产品经理</h4><h4 id="内容产品经理"><a href="#内容产品经理" class="headerlink" title="内容产品经理"></a>内容产品经理</h4><p>产品设计上激励用户生产内容，通过算法精准推荐内容，增强用户粘性和内容的打开率</p>
+<h4 id="工具型产品经理"><a href="#工具型产品经理" class="headerlink" title="工具型产品经理"></a>工具型产品经理</h4><p>“用完即走”的工具型产品，思考留存和商业化变现的问题</p>
+<h2 id="产品经理需要的能力"><a href="#产品经理需要的能力" class="headerlink" title="产品经理需要的能力"></a>产品经理需要的能力</h2><h4 id="硬实力："><a href="#硬实力：" class="headerlink" title="硬实力："></a>硬实力：</h4><p>需求分析的能力：①初步了解行业，简单需求整理 ②挖掘在不同场景、角色下的需求③领域级需求④预见发展、影响行业的需求？？？</p>
+<p>产品设计的能力：模块设计、产品设计等</p>
+<h4 id="软实力："><a href="#软实力：" class="headerlink" title="软实力："></a>软实力：</h4><p>有效沟通、持续学习的热情、好奇心、创造力、同理心、驱动力等等</p>
+<h3 id="需求调研问卷怎么查"><a href="#需求调研问卷怎么查" class="headerlink" title="需求调研问卷怎么查"></a>需求调研问卷怎么查</h3><p>调查问卷的本质：去证实和消除假设</p>
+<h3 id="如何选取数据指标"><a href="#如何选取数据指标" class="headerlink" title="如何选取数据指标"></a>如何选取数据指标</h3><p>选取反映产品理想态的指标</p>
+<h3 id="理财产品秒杀平台"><a href="#理财产品秒杀平台" class="headerlink" title="理财产品秒杀平台"></a>理财产品秒杀平台</h3><p>针对不同场景，挖掘用户需求</p>
+<p>⭐全场景下：安全防范功能</p>
+<p>直观告诉用户，这里很安全，比如大型banner，体现出产品的“多重风控，安全保障”，其次在充值体现，绑卡页面均应该展示出资金保障的措施，提高投资者对平台的信心</p>
+<p>⭐活动预热时</p>
+<p>1.激发客户对秒杀产品的兴趣</p>
+<p>（1）和传统的电商平台的普通产品不同，理财产品不能单纯通过超低价吸引用户，</p>
+<p>（2）强调数量有限，抢完既无，强化购买意愿</p>
+<p>通过短信，微信公众号推文，银行电话，这些进行宣传</p>
+<p>2.活动开始时的提示需求</p>
+<p>距离活动还有较长时间时，客户可以预约抢购，活动开始时会提前发消息告知客户，减少客户的流失率</p>
+<p>⭐活动开始时，客户进行产品的抢购</p>
+<p>1.强化客户购买意愿，刺激用户下单抢购</p>
+<p>其他</p>
+<p>实时倒计时，实时余量</p>
+<p>2.单个用户限购</p>
+<p>避免一些恶意购买，进一步提升购买欲望</p>
+<p>3.基于客户来到商城，促进其产生更多消费</p>
+<p>抢购后，推荐其他即将上线的产品，或一些有相关性的产品。于客户对秒杀品的购买诉求，表示客户是对这一类商品有一定的购买诉求的。因此，不管客户是否有成功参与秒杀抢购，我们都可以基于客户目前抢购的秒杀商品，为客户推荐一些与它相似的商品。</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2023/04/20/%E5%B8%AE%E5%8A%A9%E4%B8%AD%E5%BF%83%E6%96%87%E6%A1%A3%E5%AF%BC%E5%87%BA%E4%B8%BApdf/">帮助中心文档导出pdf（需求分析）</a>
+            
+            
+            <a class="next" rel="next" href="/2023/03/20/%E5%9F%BA%E6%9C%AC%E4%BA%91%E8%AE%A1%E7%AE%97%E9%80%9A%E8%AF%86/">基本云计算通识</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

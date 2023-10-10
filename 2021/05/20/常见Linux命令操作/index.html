@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>Linux command note | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Linux command note</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">May 20, 2021&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Technology/">Technology</a>
+                            
+                                <a href="/categories/Technology/Language/">Language</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <h5 id="1-网络连接"><a href="#1-网络连接" class="headerlink" title="1.网络连接"></a>1.网络连接</h5><ul>
+<li><p>快速打开 控制面板下网络和 Internet下的网络连接</p>
+<p>win+r ,框中输入  ncpa.cpl</p>
+<p>即可打开</p>
+</li>
+</ul>
+<h3 id="常见Linux命令操作"><a href="#常见Linux命令操作" class="headerlink" title="常见Linux命令操作"></a>常见Linux命令操作</h3><h4 id="0、补充命令"><a href="#0、补充命令" class="headerlink" title="0、补充命令"></a>0、补充命令</h4><h5 id="修改主机名："><a href="#修改主机名：" class="headerlink" title="修改主机名："></a>修改主机名：</h5><blockquote>
+<p>hostnamectl set-hostname xxx</p>
+<p>然后重新连接即可</p>
+</blockquote>
+<h5 id="注意一些linux中的符号"><a href="#注意一些linux中的符号" class="headerlink" title="注意一些linux中的符号"></a>注意一些linux中的符号</h5><p>~ 表示$HOME目录</p>
+<p>  <strong>.</strong> 表示当前目录</p>
+<p>  &#x2F; 表示根目录 </p>
+<h4 id="一、用户管理类命令"><a href="#一、用户管理类命令" class="headerlink" title="一、用户管理类命令"></a>一、用户管理类命令</h4><h5 id="添加用户"><a href="#添加用户" class="headerlink" title="添加用户"></a>添加用户</h5><p>格式：useradd	[选项]	用户名范例：</p>
+<p>useradd david</p>
+<p>-添加名字为david的用户，当用户创建成功后，默认会在&#x2F;home&#x2F; 目录下生成与用户名同名的目录。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat /etc/passwd   #查看所有用户</span><br></pre></td></tr></table></figure>
+
+<p>ps:</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">useradd -d /iddbs  iddbs #加上-d指定用户组</span><br></pre></td></tr></table></figure>
+
+
+
+<h5 id="删除用户"><a href="#删除用户" class="headerlink" title="删除用户"></a><strong>删除用户</strong></h5><p>格式：userdel [选项] [用户名]范例：</p>
+<p>userdel –r david</p>
+<p>-删除名字为smb的用户, “-r”选项会使</p>
+<p>&#x2F;home目录下的该用户目录也被删除。</p>
+<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a><strong>修改密码</strong></h5><p>格式：passwd	[选项]	[用户名]</p>
+<p>范例：</p>
+<p>passwd david</p>
+<p>修改david用户的密码</p>
+<h5 id="切换用户"><a href="#切换用户" class="headerlink" title="切换用户"></a><strong>切换用户</strong></h5><p>格式：su [选项] [用户名]</p>
+<p>范例：</p>
+<p>su – root</p>
+<p>切换到root用户，并将root用户的环境变量同时带入</p>
+<p> ps:所谓切换就是换到另一个用户登录，exit命令即可退出</p>
+<p>🌼：当然如果你使用FinalShell 利用SSH远程连接虚拟机，可以直接新建连接，使用另一个用户名登录即可（当然你得知道密码）</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220713231845899.png" alt="image-20220713231845899" style="zoom:80%;" />
+
+<p>因为是同一台虚拟主机，所以ip地址当然都是相同的啦</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220713232127125.png" alt="image-20220713232127125" style="zoom:80%;" />
+
+<p>then 你就可以更方便的使用两个用户名操作啦</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220713232231968.png" alt="image-20220713232231968" style="zoom:80%;" />
+
+<h5 id="添加用户组"><a href="#添加用户组" class="headerlink" title="添加用户组"></a><strong>添加用户组</strong></h5><p>格式：groupadd [选项] [用户组名]</p>
+<p>范例：</p>
+<p>groupadd group1</p>
+<p>添加组名为“group1”的用户组</p>
+<h5 id="删除用户组"><a href="#删除用户组" class="headerlink" title="删除用户组"></a><strong>删除用户组</strong></h5><p>格式：groupdel [用户组名]</p>
+<p>范例：</p>
+<p>groupdel group1</p>
+<p>删除组名为“group1”的用户组</p>
+<h4 id="二、-文件与目录类命令"><a href="#二、-文件与目录类命令" class="headerlink" title="二、 文件与目录类命令"></a><strong>二、</strong> <strong>文件与目录类命令</strong></h4><h5 id="查看目录"><a href="#查看目录" class="headerlink" title="查看目录"></a><strong>查看目录</strong></h5><p>格式：ls [选项] [目录或文件]</p>
+<p>范例：</p>
+<p>1.ls &#x2F;home</p>
+<p>显示&#x2F;home目录下的文件与目录（不包含隐藏文件）</p>
+<p>2.ls –a &#x2F;home</p>
+<p>显示&#x2F;home目录下的所有文件与目录（含隐藏文件）</p>
+<p>3.ls –l &#x2F;home (可以简写为 ll &#x2F;h)</p>
+<p>显示&#x2F;home目录下的文件与目录的详细信息</p>
+<h5 id="改变工作目录"><a href="#改变工作目录" class="headerlink" title="改变工作目录"></a><strong>改变工作目录</strong></h5><p>格式：cd 目录名</p>
+<p>范例：</p>
+<p>1.cd &#x2F;home&#x2F;</p>
+<p>进入&#x2F;home目录</p>
+<p>（注意前面一定要加&#x2F;）</p>
+<p>2.cd ..</p>
+<p><strong>退回到上一级目录</strong></p>
+<h5 id="复制文件-目录"><a href="#复制文件-目录" class="headerlink" title="复制文件&#x2F;目录"></a><strong>复制文件&#x2F;目录</strong></h5><p>格式：cp [选项]	源文件或目录	目标文件或目录</p>
+<p>范例：</p>
+<p>1.cp &#x2F;home&#x2F;test &#x2F;tmp&#x2F;</p>
+<p>将	&#x2F;home目录下的test文件copy到&#x2F;tmp目录下</p>
+<p>2.cp –r &#x2F;home&#x2F;dir1 &#x2F;tmp&#x2F;</p>
+<p>将	&#x2F;home目录下的dir1目录copy到&#x2F;tmp目录下</p>
+<h5 id="移动或更名"><a href="#移动或更名" class="headerlink" title="移动或更名"></a><strong>移动或更名</strong></h5><p>格式：mv [选项] 源文件或目录	目标文件或目录</p>
+<p>范例：</p>
+<p>1.mv &#x2F;home&#x2F;test &#x2F;home&#x2F;test1</p>
+<p>将	&#x2F;home目录下的test文件更名为test1 2.mv &#x2F;home&#x2F;dir1 &#x2F;tmp&#x2F;</p>
+<p>将	&#x2F;home目录下dir1目录移动（剪切）到&#x2F;tmp目录下</p>
+<h5 id="删除文件-目录"><a href="#删除文件-目录" class="headerlink" title="删除文件&#x2F;目录"></a><strong>删除文件&#x2F;目录</strong></h5><p>格式：rm [选项] 文件或目录</p>
+<p>范例：</p>
+<p>1.rm &#x2F;home&#x2F;test</p>
+<p>删除&#x2F;home目录下的test文件</p>
+<p>2.rm –r &#x2F;home&#x2F;dir</p>
+<p>删除&#x2F;home目录下的dir目录</p>
+<h5 id="改变文件的权限"><a href="#改变文件的权限" class="headerlink" title="改变文件的权限"></a><strong>改变文件的权限</strong></h5><p>格式： chmod [who] [+ | - | &#x3D;] [mode] 文件名参数：</p>
+<p>who:</p>
+<p>u 表示文件的所有者。</p>
+<p>g 表示与文件所有者同组的用户。</p>
+<p>o 表示“其他用户”。</p>
+<p>a 表示“所有用户”。它是系统默认值。</p>
+<p>mode:</p>
+<p>+ 添加某个权限</p>
+<p>- 取消某个权限</p>
+<p>&#x3D; 赋予给定权限</p>
+<p>例：chmod g+w hello.c</p>
+<h5 id="创建目录"><a href="#创建目录" class="headerlink" title="创建目录"></a><strong>创建目录</strong></h5><p>格式：mkdir [选项] 目录名</p>
+<p>范例：</p>
+<p>1.mkdir &#x2F;home&#x2F;workdir</p>
+<p>在&#x2F;home目录下创建workdir目录</p>
+<p>2.mkdir –p &#x2F;home&#x2F;dir1&#x2F;dri4&#x2F;dir3&#x2F;dir2</p>
+<p>创建&#x2F;home&#x2F;dir1&#x2F;dir2目录，如果dir1不存在，先创建dir1</p>
+<h5 id="查看目录大小"><a href="#查看目录大小" class="headerlink" title="查看目录大小"></a><strong>查看目录大小</strong></h5><p>格式：du 目录名</p>
+<p>范例：</p>
+<p>\1. du &#x2F;tmp</p>
+<h5 id="⭐查看当前路径"><a href="#⭐查看当前路径" class="headerlink" title="⭐查看当前路径"></a>⭐<strong>查看当前路径</strong></h5><p>格式：pwd</p>
+<p>范例：</p>
+<p>\1. pwd</p>
+<p>显示当前工作目录的绝对路径</p>
+<h4 id="三、-压缩打包类命令"><a href="#三、-压缩打包类命令" class="headerlink" title="三、 压缩打包类命令"></a><strong>三、</strong> <strong>压缩打包类命令</strong></h4><h5 id="1、压缩解压"><a href="#1、压缩解压" class="headerlink" title="1、压缩解压"></a><strong>1、压缩解压</strong></h5><p>在Linux环境中，压缩文件的扩展名通常为*.tar; *.tar.gz;</p>
+<p>*.tgz; *.gz; *.bz2。而不同后缀名的文件，则需要使用不同</p>
+<p>的命令来处理。</p>
+<p>*.gz &lt;-&gt; gzip命令压缩的文件</p>
+<p>*.bz2 &lt;-&gt; bzip2命令压缩的文件</p>
+<p>*.tar &lt;-&gt; tar命令打包的文件</p>
+<p>*.tar.gz &lt;-&gt; tar打包后，再经过gzip压缩的文件</p>
+<p>*.tar.bz2 &lt;-&gt; tar命令打包后，再经过bzip2压缩的文件</p>
+<h5 id="2、压缩解压-gzip"><a href="#2、压缩解压-gzip" class="headerlink" title="2、压缩解压-gzip"></a><strong>2、压缩解压-gzip</strong></h5><p>格式：gzip [选项] 文件名</p>
+<p>范例：</p>
+<p>1.gzip &#x2F;root&#x2F;anaconda-ks.cfg</p>
+<p>压缩文件</p>
+<p>2.gzip –d &#x2F;root&#x2F;anaconda-ks.cfg.gz</p>
+<p>解压文件</p>
+<h5 id="3、压缩解压-bzip2"><a href="#3、压缩解压-bzip2" class="headerlink" title="3、压缩解压-bzip2"></a><strong>3、压缩解压-bzip2</strong></h5><p>格式：bzip2 [选项] 文件名</p>
+<p>范例：</p>
+<p>1.bzip2 &#x2F;root&#x2F;anaconda-ks.cfg</p>
+<p>压缩文件</p>
+<p>2.bzip2 –d &#x2F;root&#x2F;anaconda-ks.cfg.bz2</p>
+<p>解压文件</p>
+<h5 id="4、打包压缩-tar"><a href="#4、打包压缩-tar" class="headerlink" title="4、打包压缩-tar"></a><strong>4、打包压缩-tar</strong></h5><p>格式：tar [选项] 目录或者文件范例：</p>
+<p>1.tar cvf tmp.tar &#x2F;tmp</p>
+<p>将tmp目录打包为一个文件</p>
+<p>2.tar xvf tmp.tar</p>
+<p>将打包文件解开</p>
+<p>3.tar cvzf tmp.tar.gz &#x2F;tmp</p>
+<p>将tmp目录打包为一个文件</p>
+<p>4.tar xvzf tmp.tar.gz</p>
+<p>将打包文件解开</p>
+<h4 id="四、-磁盘管理类命令"><a href="#四、-磁盘管理类命令" class="headerlink" title="四、 磁盘管理类命令"></a><strong>四、</strong> 磁盘管理类命令</h4><h5 id="1、加载光盘-mount"><a href="#1、加载光盘-mount" class="headerlink" title="1、加载光盘-mount"></a>1、<strong>加载光盘-mount</strong></h5><p>格式：mount	[选项]	设备名	挂载目录</p>
+<p>范例：</p>
+<p>\1. mount &#x2F;dev&#x2F;cdrom &#x2F;mnt</p>
+<h5 id="2、卸载光盘-umount"><a href="#2、卸载光盘-umount" class="headerlink" title="2、卸载光盘-umount"></a>2、<strong>卸载光盘-umount</strong></h5><p>格式：umount	挂载目录</p>
+<p>范例：</p>
+<p>\1. umount &#x2F;mnt</p>
+<h5 id="3、查看磁盘-df"><a href="#3、查看磁盘-df" class="headerlink" title="3、查看磁盘-df"></a>3、<strong>查看磁盘-df</strong></h5><p>格式：df [选项]</p>
+<p>范例：</p>
+<p>1.df -hl</p>
+<h5 id="⭐4、创建新文件-touch"><a href="#⭐4、创建新文件-touch" class="headerlink" title="⭐4、创建新文件 -touch"></a>⭐4、<strong>创建新文件 -touch</strong></h5><p>格式：touch	文件名</p>
+<p>范例：</p>
+<p>1.touch newfile</p>
+<p>创建一个名字为“newfile”的空白文件</p>
+<h5 id="5、文件链接-ln"><a href="#5、文件链接-ln" class="headerlink" title="5、文件链接 -ln"></a>5、<strong>文件链接 -ln</strong></h5><p>在Linux系统中，存在类似于windows中“快捷方式”的</p>
+<p>链接文件。链接文件又分为“软链接”和“硬链接”。</p>
+<p>格式：ln [选项] 文件名	链接名</p>
+<p>范例：</p>
+<p>\1. ln oldfile hlink</p>
+<p>为oldfile文件创建一个硬链接hlink</p>
+<p>\1. ln –s oldfile slink</p>
+<p>为oldfile文件创建一个软链接slink</p>
+<h6 id="🌼：补充硬链接与软链接的区别"><a href="#🌼：补充硬链接与软链接的区别" class="headerlink" title="🌼：补充硬链接与软链接的区别"></a>🌼：补充硬链接与软链接的区别</h6><p>根据操作系统的知识我们可以很好的解决这个问题</p>
+<p>链接旨在实现文件共享，硬链接利用索引节点实现，软连接基于符号链接实现。</p>
+<p>hlink文件的FCB中的i节点与oldfile中的相同，可以理解为内容拷贝，即副本</p>
+<p>slink文件是符号链接LINK文件，其内容就是oldfile的地址文本，若oldfile被删除，它也随即失效</p>
+<h4 id="五、-查找类命令"><a href="#五、-查找类命令" class="headerlink" title="五、 查找类命令"></a><strong>五、</strong> <strong>查找类命令</strong></h4><h5 id="1-查找文件-目录-find"><a href="#1-查找文件-目录-find" class="headerlink" title="1. 查找文件&#x2F;目录-find"></a>1. <strong>查找文件&#x2F;目录-find</strong></h5><p>格式：find 查找路径	-name 文件名</p>
+<p>范例：</p>
+<p>\1. find &#x2F;root&#x2F; -name install.log</p>
+<p>在root目录下寻找名字为intall.log的文件</p>
+<h5 id="2-查找字符串"><a href="#2-查找字符串" class="headerlink" title="2. 查找字符串"></a>2. <strong>查找字符串</strong></h5><p>格式：grep “字符串”路径 [选项]</p>
+<p>范例：</p>
+<p>1.grep “hello” .&#x2F; -rn</p>
+<p>在当前路径下寻找包含字符串”hello”的文件</p>
+<p>2.grep “he*” .&#x2F; -rn</p>
+<p>在当前路径下寻找包含以”he”开头的字符串的文件</p>
+<h4 id="六、-进程管理类命令"><a href="#六、-进程管理类命令" class="headerlink" title="六、 进程管理类命令"></a><strong>六、</strong> 进程管理类命令</h4><h5 id="1、查看进程-PS"><a href="#1、查看进程-PS" class="headerlink" title="1、查看进程-PS"></a>1、<strong>查看进程-PS</strong></h5><p>格式：ps	[选项]</p>
+<blockquote>
+<p>ps 命令用来列出系统中 <strong>当前<strong><strong>正在</strong></strong>运行</strong> 的那些进程，<strong>就是执行 ps 命令的那个时刻的那些进程<strong><strong>的快照</strong></strong>。</strong></p>
+</blockquote>
+<p>范例：</p>
+<p>\1. ps aux</p>
+<blockquote>
+<p>  ps -a        - 列出所有运行中&#x2F;激活进程<br>  ps -ef |grep   - 列出需要进程<br>  ps -aux      - 显示进程信息，包括无终端的（x）和针对用户（u）的进程：如USER, PID, %CPU, %MEM等</p>
+</blockquote>
+<h5 id="2、杀死进程-kill"><a href="#2、杀死进程-kill" class="headerlink" title="2、杀死进程-kill"></a>2、<strong>杀死进程-kill</strong></h5><p>格式：kill [选项] pid</p>
+<p>范例：</p>
+<p>1.vi hello.c</p>
+<p>2.ps aux</p>
+<p>3.kill</p>
+<p> 补充：</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220722171811282.png" alt="image-20220722171811282" style="zoom:80%;" />
+
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220722171844214.png" alt="image-20220722171844214" style="zoom:80%;" />
+
+<h5 id="3、查看内存-free"><a href="#3、查看内存-free" class="headerlink" title="3、查看内存-free"></a>3、<strong>查看内存-free</strong></h5><p>格式：free [选项]</p>
+<p>范例：</p>
+<p>\1. free</p>
+<h5 id="4、CPU占有率-top"><a href="#4、CPU占有率-top" class="headerlink" title="4、CPU占有率 -top"></a>4、<strong>CPU占有率 -top</strong></h5><p>格式：top [选项]</p>
+<p>范例：</p>
+<p>\1. top</p>
+<h4 id="七、-杂项命令大聚合"><a href="#七、-杂项命令大聚合" class="headerlink" title="七、 杂项命令大聚合"></a><strong>七、</strong> <strong>杂项命令大聚合</strong></h4><h5 id="1、软件管理-rpm"><a href="#1、软件管理-rpm" class="headerlink" title="1、软件管理 -rpm"></a>1、<strong>软件管理 -rpm</strong></h5><p>格式：rpm [选项] [软件包]</p>
+<p>范例：</p>
+<p>1.rpm –ivh &#x2F;mnt&#x2F;Packages&#x2F;xinetd-2.3.14- 34.el6.i686.rpm</p>
+<p>安装xinetd-2.3.14-34.el6.i686.rpm</p>
+<p>2.rpm –qa</p>
+<p>查看系统中已经安装的所有软件包</p>
+<p>\3. rpm –e xinetd-2.3.14-34.el6.i686</p>
+<p>卸载已经安装的xinetd-2.3.14-34.el6.i686</p>
+<h5 id="2、管道操作"><a href="#2、管道操作" class="headerlink" title="2、管道操作 -|"></a>2、<strong>管道操作 -|</strong></h5><p>格式	命令1 | 命令2 范例：</p>
+<ol>
+<li>   rpm –qa|grep tar</li>
+</ol>
+<p>查询系统中安装的所有软件包，并从中找出带有字符串”tar”的。</p>
+<h5 id="3、查看帮助-man"><a href="#3、查看帮助-man" class="headerlink" title="3、查看帮助 -man"></a>3、<strong>查看帮助 -man</strong></h5><p>格式：man 命令名范例：</p>
+<ol>
+<li>   man find</li>
+</ol>
+<p>查看find命令的用法</p>
+<h5 id="4、关闭Linux系统"><a href="#4、关闭Linux系统" class="headerlink" title="4、关闭Linux系统"></a>4、<strong>关闭Linux系统</strong></h5><p>格式：shutdown [选项] 时间</p>
+<p>范例：</p>
+<ol>
+<li>   shutdown now</li>
+</ol>
+<p>立刻关机</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2021/06/20/JavaScript/">JavaScript</a>
+            
+            
+            <a class="next" rel="next" href="/2020/10/10/hello-world/">Hello World</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

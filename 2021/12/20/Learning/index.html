@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <meta name="author" content="Chloe HXY">
+
+
+
+
+
+<title>Learning(Very fragmentary knowledge) | Hexo</title>
+
+
+
+    <link rel="icon" href="/favicon.ico">
+
+
+
+
+    <!-- stylesheets list from _config.yml -->
+    
+    <link rel="stylesheet" href="/css/style.css">
+    
+
+
+
+    <!-- scripts list from _config.yml -->
+    
+    <script src="/js/script.js"></script>
+    
+    <script src="/js/tocbot.min.js"></script>
+    
+
+
+
+    
+    
+        
+    
+
+
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+    <script>
+        // this function is used to check current theme before page loaded.
+        (() => {
+            const currentTheme = window.localStorage && window.localStorage.getItem('theme') || '';
+            const isDark = currentTheme === 'dark';
+            const pagebody = document.getElementsByTagName('body')[0]
+            if (isDark) {
+                pagebody.classList.add('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Dark"
+            } else {
+                pagebody.classList.remove('dark-theme');
+                // mobile
+                document.getElementById("mobile-toggle-theme").innerText = "· Light"
+            }
+        })();
+    </script>
+
+    <div class="wrapper">
+        <header>
+    <nav class="navbar">
+        <div class="container">
+            <div class="navbar-header header-logo"><a href="/">Chloehxy&#39;s Blog</a></div>
+            <div class="menu navbar-right">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+                <input id="switch_default" type="checkbox" class="switch_default">
+                <label for="switch_default" class="toggleBtn"></label>
+            </div>
+        </div>
+    </nav>
+
+    
+    <nav class="navbar-mobile" id="nav-mobile">
+        <div class="container">
+            <div class="navbar-header">
+                <div>
+                    <a href="/">Chloehxy&#39;s Blog</a><a id="mobile-toggle-theme">·&nbsp;Light</a>
+                </div>
+                <div class="menu-toggle" onclick="mobileBtn()">&#9776; Menu</div>
+            </div>
+            <div class="menu" id="mobile-menu">
+                
+                    <a class="menu-item" href="/categories/Technology">Technology</a>
+                
+                    <a class="menu-item" href="/categories/Literature">Literature</a>
+                
+                    <a class="menu-item" href="/categories/PM">PM</a>
+                
+                    <a class="menu-item" href="/categories/IELTS">IELTS</a>
+                
+                    <a class="menu-item" href="/about">About</a>
+                
+            </div>
+        </div>
+    </nav>
+
+</header>
+<script>
+    var mobileBtn = function f() {
+        var toggleMenu = document.getElementsByClassName("menu-toggle")[0];
+        var mobileMenu = document.getElementById("mobile-menu");
+        if(toggleMenu.classList.contains("active")){
+           toggleMenu.classList.remove("active")
+            mobileMenu.classList.remove("active")
+        }else{
+            toggleMenu.classList.add("active")
+            mobileMenu.classList.add("active")
+        }
+    }
+</script>
+            <div class="main">
+                <div class="container">
+    
+    
+        <div class="post-toc">
+    <div class="tocbot-list">
+    </div>
+    <div class="tocbot-list-menu">
+        <a class="tocbot-toc-expand" onclick="expand_toc()">Expand all</a>
+        <a onclick="go_top()">Back to top</a>
+        <a onclick="go_bottom()">Go to bottom</a>
+    </div>
+</div>
+
+<script>
+    var tocbot_timer;
+    var DEPTH_MAX = 6; // 为 6 时展开所有
+    var tocbot_default_config = {
+        tocSelector: '.tocbot-list',
+        contentSelector: '.post-content',
+        headingSelector: 'h1, h2, h3, h4, h5',
+        orderedList: false,
+        scrollSmooth: true,
+        onClick: extend_click,
+    };
+
+    function extend_click() {
+        clearTimeout(tocbot_timer);
+        tocbot_timer = setTimeout(function() {
+            tocbot.refresh(obj_merge(tocbot_default_config, {
+                hasInnerContainers: true
+            }));
+        }, 420); // 这个值是由 tocbot 源码里定义的 scrollSmoothDuration 得来的
+    }
+
+    document.ready(function() {
+        tocbot.init(obj_merge(tocbot_default_config, {
+            collapseDepth: 1
+        }));
+    });
+
+    function expand_toc() {
+        var b = document.querySelector('.tocbot-toc-expand');
+        var expanded = b.getAttribute('data-expanded');
+        expanded ? b.removeAttribute('data-expanded') : b.setAttribute('data-expanded', true);
+        tocbot.refresh(obj_merge(tocbot_default_config, {
+            collapseDepth: expanded ? 1 : DEPTH_MAX
+        }));
+        b.innerText = expanded ? 'Expand all' : 'Collapse all';
+    }
+
+    function go_top() {
+        window.scrollTo(0, 0);
+    }
+
+    function go_bottom() {
+        window.scrollTo(0, document.body.scrollHeight);
+    }
+
+    function obj_merge(target, source) {
+        for (var item in source) {
+            if (source.hasOwnProperty(item)) {
+                target[item] = source[item];
+            }
+        }
+        return target;
+    }
+</script>
+    
+
+    
+    <article class="post-wrap">
+        <header class="post-header">
+            <h1 class="post-title">Learning(Very fragmentary knowledge)</h1>
+            
+                <div class="post-meta">
+                    
+                        Author: <a itemprop="author" rel="author" href="/">Chloe HXY</a>
+                    
+
+                    
+                        <span class="post-time">
+                        Date: <a href="#">December 20, 2021&nbsp;&nbsp;0:00:00</a>
+                        </span>
+                    
+                    
+                        <span class="post-category">
+                    Category:
+                            
+                                <a href="/categories/Technology/">Technology</a>
+                            
+                                <a href="/categories/Technology/Other/">Other</a>
+                            
+                        </span>
+                    
+                </div>
+            
+        </header>
+
+        <div class="post-content">
+            <p>关于一些标记的含义</p>
+<p>☀：知识小点</p>
+<p>❓：补充插入一个未知知识点</p>
+<p>🔔：提醒，注意的地方</p>
+<p>❄：该知识点需要后续补充</p>
+<p>❗：注意点</p>
+<p>🧠：一些个人见解</p>
+<h2 id="常用口令"><a href="#常用口令" class="headerlink" title="常用口令"></a>常用口令</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//解决端口占用，杀进程口令</span><br><span class="line">netstat -ano|findstr xxx 根据端口号找到该进程</span><br><span class="line">//根据进程的pid号，杀进程</span><br><span class="line">taskkill -PID PID号 -F</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="一、机器学习"><a href="#一、机器学习" class="headerlink" title="一、机器学习"></a>一、机器学习</h2><h3 id="树莓派"><a href="#树莓派" class="headerlink" title="树莓派"></a>树莓派</h3><p>集成在一块电路板的迷你电脑</p>
+<p>它没有屏幕</p>
+<blockquote>
+<p>关键词：VNC  SSH</p>
+<p>要将树莓派连接到笔记本电脑显示器，只需使用以太网电缆即可。树莓派的桌面GUI(图形用户界面)可通过笔记本电脑显示屏使用以太网连接进行查看。有许多软件程序可以在树莓派和笔记本电脑之间建立连接。我们使用VNC服务器软件将树莓派连接到我们的笔记本电脑，并且允许使用鼠标和键盘远程查看树莓派的桌面，这也意味着可以将树莓派放在家中的任何位置仍然可以控制它，此外，可以通过笔记本电脑的以太网WiFi共享互联网。</p>
+</blockquote>
+<h3 id="opencv"><a href="#opencv" class="headerlink" title="opencv"></a>opencv</h3><p>OpenCV是一个用于图像处理、分析、机器视觉方面的开源函数库. 它的一个目标是提供友好的机器视觉接口函数。</p>
+<p>开源的计算机视觉库</p>
+<p>误区：并不是一个ide，而是一个库，可以提供c++&#x2F;python 的相关接口函数，使用时，可以在vs上部署opencv</p>
+<p>C++ + opencv   &#x2F;&#x2F;&#x2F;   python  +  opencv</p>
+<h3 id="人脸识别"><a href="#人脸识别" class="headerlink" title="人脸识别"></a>人脸识别</h3><h4 id="机器学习的人脸识别过程"><a href="#机器学习的人脸识别过程" class="headerlink" title="机器学习的人脸识别过程"></a>机器学习的人脸识别过程</h4><p>基于传统图像处理和机器学习技术的人脸识别技术，其中的流程都是一样的。</p>
+<p>机器学习-人脸识别系统都包括：</p>
+<ul>
+<li><p>人脸检测（解决人在哪的问题）</p>
+</li>
+<li><p>人脸对齐（通过找基准点，让人脸图像都变换到一个统一的角度和姿态）</p>
+</li>
+<li><p>人脸特征向量化（特征向量用于描述这张人脸。）</p>
+<blockquote>
+<p>所以我们常常利用PCA技术对人脸描述向量进行降维处理，保留数据集中对方差贡献最大的人脸特征来达到简化数据集的目的</p>
+</blockquote>
+</li>
+<li><p>人脸识别（对上一步人脸向量进行分类，使用各种分类算法，以达到人脸识别的目的）</p>
+</li>
+</ul>
+<h4 id="深度学习的人脸识别过程"><a href="#深度学习的人脸识别过程" class="headerlink" title="深度学习的人脸识别过程"></a>深度学习的人脸识别过程</h4><blockquote>
+<p>不同于机器学习模型的人脸识别，深度学习将人脸特征向量化，以及人脸向量分类结合到了一起，通过神经网络算法一步到位。</p>
+</blockquote>
+<hr>
+<h2 id="二、计算机网络"><a href="#二、计算机网络" class="headerlink" title="二、计算机网络"></a>二、计算机网络</h2><h3 id="SSH"><a href="#SSH" class="headerlink" title="SSH"></a>SSH</h3><p>（secure shell  安全壳）  安全网络协议   专为远程登录服务会话、其他网络服务提供安全性的协议。</p>
+<p>可以加密传输数据（1）    压缩数据  提高传输速度</p>
+<p>&#x2F;<em>Windows中使用SSH，需要使用另一个软件PuTTY。</em>&#x2F;</p>
+<p><strong>（1）安全机制</strong></p>
+<p>RSA非对称加密技术</p>
+<p><strong>（2）安全验证方式</strong></p>
+<p>ssh有两种级别的安全验证方式：</p>
+<p>1.口令登录</p>
+<p>即需要输入密码登录到远程主机</p>
+<p>2.使用密钥免密登录</p>
+<p>大概是，在客户端生成密钥对，将公钥拷贝到远程主机，当客户端发送请求时，会在服务器中寻找该客户端的公钥，并与传来的公钥对比，相同则发送质询到客户端，用私钥解密后，传递登录信息到服务器。</p>
+<p>对于口令登录，虽然在传输过程中使用了rsa进行加密，但可能存在冒充服务器的情况，即中间人攻击，</p>
+<p>而使用密钥登录，无需传输口令，避免了中间人攻击。</p>
+<h3 id="FTP-File-Transfer-Protocol"><a href="#FTP-File-Transfer-Protocol" class="headerlink" title="FTP(File Transfer Protocol)"></a>FTP(File Transfer Protocol)</h3><p>文件传输协议，它是TCP&#x2F;IP协议组中的协议之一</p>
+<p>包括两个组成部分：1.FTP服务器    2.FTP客户端</p>
+<p>利用FTP协议将网页、程序传到web服务器上</p>
+<p>？？？用户使用FTP客户端通过FTP协议访问FTP服务器上的资源</p>
+<blockquote>
+<p>你还需要一种将文件从本地硬盘上传到远程Web服务器的方法。 为了做到这一点，你必须使用FTP客户端。</p>
+<p>每个系统都包含一个FTP客户端作为文件管理器的一部分。 Windows资源管理器，Nautilus（一个常见的Linux文件管理器）和Mac Finder都包含该功能。 然而，人们更经常选择专门的FTP客户端，可以存储密码并且并行显示本地和远程目录。</p>
+</blockquote>
+<h3 id="网络服务器"><a href="#网络服务器" class="headerlink" title="网络服务器"></a>网络服务器</h3><p>硬件上：计算机</p>
+<p>与其他连接到互联网的设备进行物理数据的交互</p>
+<p>软件上：HTTP服务器</p>
+<p>一台HTTP服务器是一种能够理解URL（网络地址）和HTTP（浏览器用来查看网页的协议）的软件</p>
+<h3 id="HTTP（超文本传输协议）"><a href="#HTTP（超文本传输协议）" class="headerlink" title="HTTP（超文本传输协议）"></a>HTTP（超文本传输协议）</h3><blockquote>
+<ul>
+<li>只有<em>用户</em>可以制定 HTTP 请求，然后只会发送到<em>服务器</em>。服务器只能响应客户端的HTTP请求。</li>
+<li>当通过 HTTP 请求一个文件时，客户必须提供这个文件的<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Glossary/URL">URL</a>。</li>
+<li>网络服务器<em>必须应答</em>每一个 HTTP 请求，至少也要回复一个错误信息。</li>
+</ul>
+</blockquote>
+<h3 id="TCP"><a href="#TCP" class="headerlink" title="TCP"></a>TCP</h3><p>传输控制协议，它使两台主机能够建立连接并交换数据流。TCP 能保证数据的交付，维持数据包的发送顺序。确保数据传输的可靠性</p>
+<p><strong>客户端</strong></p>
+<p><strong>展现一个网页的过程</strong></p>
+<p>浏览器发送请求（获取页面的HTML文档），解析文档资源（如：css，图片视频等页面资源），继续发送请求，获取可执行脚本、css样式进行页面渲染，最终呈现一个完整的网页。浏览器获取到的可执行脚本可以在之后的阶段获取更多资源，并相应地更新网页。</p>
+<p>总之：浏览器负责发送HTTP请求，并解析HTTP返回的响应，以向用户提供明确的响应。</p>
+<p>HTTP本质是无状态的，使用<strong>Cookies（网页浏览数据）</strong>可以创建一个会话让每次请求都能共享相同的上下文信息，达成相同的状态。</p>
+<p><strong>HTTP缓存</strong></p>
+<p>缓存是一种保存资源副本并在下次请求时直接使用该副本的技术。复用了以前的资源，大大提升了性能。</p>
+<h3 id="DNS（域名服务器）（Domain-Name-Server）"><a href="#DNS（域名服务器）（Domain-Name-Server）" class="headerlink" title="DNS（域名服务器）（Domain Name Server）"></a>DNS（域名服务器）（Domain Name Server）</h3><p>IP地址和域名的对应关系存放在域名服务器中，其可提供IP地址和域名之间的转换服务</p>
+<h4 id="IP地址与域名"><a href="#IP地址与域名" class="headerlink" title="IP地址与域名"></a>IP地址与域名</h4><p>IP地址就像人的身份证号：127.0.0.1(就是localhost)</p>
+<p>域名就像人的姓名：<a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<h4 id="端口号"><a href="#端口号" class="headerlink" title="端口号"></a>端口号</h4><img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220111214002281.png" alt="image-20220111214002281" style="zoom:80%;" />
+
+
+
+<p>只有80端口可以被省略，非80端口，都需要 localhost:xxxx</p>
+<hr>
+<h2 id="三、后端学习"><a href="#三、后端学习" class="headerlink" title="三、后端学习"></a>三、后端学习</h2><h3 id="MYSQL"><a href="#MYSQL" class="headerlink" title="MYSQL"></a>MYSQL</h3><p>数据库集合，MYSQL&gt;数据库&gt;数据表&gt;数据</p>
+<h4 id="数据库的基本操作"><a href="#数据库的基本操作" class="headerlink" title="数据库的基本操作"></a>数据库的基本操作</h4><p><strong>!!!所有语句都必须有</strong>  <strong>分号</strong>  <strong>；</strong></p>
+<ol>
+<li><p>查询（列出）数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show databases ;     (注意有s)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database xx;</span><br></pre></td></tr></table></figure>
+
+<p>创建时指明字符类型（默认latin，常用utf8）</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database xx charset=(utf8);</span><br></pre></td></tr></table></figure>
+
+<p>&#x2F;<em>创建时判段（防止重名）</em>&#x2F;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create database if not exits xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查询具体某一数据库的信息</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show create database xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop database xx;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="数据表的基本操作"><a href="#数据表的基本操作" class="headerlink" title="数据表的基本操作"></a>数据表的基本操作</h4><ol>
+<li><p>新建数据表</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">create table <span class="title function_">xx</span><span class="params">(</span></span><br><span class="line"><span class="params">  字段名 数据类型 ,   <span class="comment">//注意每一句后面都有一个, 有点类似于对象</span></span></span><br><span class="line"><span class="params">  字段名 数据类型 ,</span></span><br><span class="line"><span class="params">  pg:name varchar(<span class="number">10</span>),  <span class="comment">//varchar</span></span></span><br><span class="line"><span class="params">  <span class="comment">//对于字段的理解：可以认为是表格中每列的列头名。</span></span></span><br></pre></td></tr></table></figure>
+
+<p>数据类型补充：</p>
+<blockquote>
+<p>数据类型: int 整型<br>         tinyint 整型（0-256）<br>         decimal 浮点型（总位数，小数位数） 例如 decimal(3,1)<br>     char(X) 定长字符型 例如 char(10)<br>     varchar(X) 可变长度字符型 例如varchar（10）<br>     text 大段文本<br>     binary 二进制（存储照片等）</p>
+</blockquote>
+</li>
+<li><p>查看所有表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show tables;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>显示某一表的结构</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">desc table xx;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除表</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table xx;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h4 id="数据的基本操作"><a href="#数据的基本操作" class="headerlink" title="数据的基本操作"></a>数据的基本操作</h4><p>&#x2F;<em>为了方便后期查看，以下不再写成通用代码格式，而是用具体的实例演示</em>&#x2F;</p>
+<p>1.增</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">insert into stu(name,grade,sex) values(&quot;cris&quot;,98,&quot;男&quot;);</span><br><span class="line">insert into stu(name,grade,sex) values(&quot;William&quot;,99,&quot;男&quot;);</span><br></pre></td></tr></table></figure>
+
+<p>2.查</p>
+<p>​    显示该表全部数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select*from stu;</span><br></pre></td></tr></table></figure>
+
+<p>​    只显示指定列数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select name from stu;</span><br></pre></td></tr></table></figure>
+
+<p>​    设置筛选条件，显示符合条件的数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from stu where name=&quot;cris&quot;and sex=&quot;男&quot;;</span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>​     对显示的顺序进行设置（排序）</p>
+<p>​                      由高到低、由低到高</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//注意必须对某一字段进行排序</span></span><br><span class="line">select*from stu order by name asc;<span class="comment">//表示升序排列，默认也是升序</span></span><br><span class="line">select*from stu order by name desc;<span class="comment">//表示降序排列</span></span><br></pre></td></tr></table></figure>
+
+
+
+<hr>
+<p>​      对显示的数据数进行限制</p>
+<p>​                      只取前n条数据</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select *from stu limit n;</span><br></pre></td></tr></table></figure>
+
+<p>​                       从前n 条开始取m条</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select*from stu limit n,m;</span><br></pre></td></tr></table></figure>
+
+<p>3.删</p>
+<p>   删除数据和查类似，都可能包含挑选的过程。语法也是相似的，只是把select改成了delete</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from stu where name=&quot;cris&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>4.改</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update stu <span class="built_in">set</span> sex=<span class="string">&quot;女&quot;</span> where grade=<span class="number">99</span>;  <span class="comment">//将分数为99的数据条的sex值均改为女</span></span><br><span class="line">update stu <span class="built_in">set</span> sex=<span class="string">&quot;女&quot;</span>; <span class="comment">//所有数据条的sex数据段值全部改为女</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>5.运算</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum(); 求和 select sum(grade) from stu;</span><br><span class="line">avg(); 求平均值 select avg(grade) from stu;</span><br><span class="line">max(); 求最大值 select max(grade) from stu;</span><br><span class="line">min(); 求最小值 select min(grade) from stu;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="PostgreSQL"><a href="#PostgreSQL" class="headerlink" title="PostgreSQL"></a>PostgreSQL</h3><blockquote>
+<p>语句实际上与MySQL差不多，但由于本学期系统的学习了PostgreSQL数据库,故这里还是单独写总结</p>
+</blockquote>
+<h3 id="关于javaweb"><a href="#关于javaweb" class="headerlink" title="关于javaweb"></a>关于javaweb</h3><p>JSP + Servlet + JavaBean</p>
+<ol>
+<li>JSP：主要做动态页面的展示；jsp &#x3D; html + java；代码显示模板，重点在于显示数据，适合编写输出动态内容</li>
+</ol>
+<blockquote>
+<p>JSP指令（directive）是为JSP引擎而设计的，它们并不直接产生任何可见输出，而只是告诉引擎如何处理JSP页面中的其余部分。</p>
+<p> 　　JSP语法：&lt;%@ 指令名称 属性1&#x3D;“属性值1” 属性2&#x3D;“属性值2” …%&gt;</p>
+<p>　　如：&lt;%@ page language&#x3D;”java” import&#x3D;”java.util.*” pageEncoding&#x3D;”UTF-8”%&gt;  </p>
+</blockquote>
+<p>2.Servlet：接收前端页面数据，返回前端页面响应，连接数据库，内部实现对应逻辑；</p>
+<pre><code>衍生出三层结构：
+1.web层（表现层）
+核心就是一个Servlet类，主要职能：接收数据，响应数据，调用业务逻辑层完成逻辑交互。
+
+2.service层（业务逻辑层）
+
+处理核心业务逻辑，负责web层和dao层的统一调度。
+
+3.dao(数据访问对象层) 
+
+数据库的增删改查，实体封装，数据库和实体的对应。
+</code></pre>
+<p>3.JavaBean：一个普通类，又分为实体bean 和业务bean。</p>
+<h4 id="Tomcat"><a href="#Tomcat" class="headerlink" title="Tomcat"></a>Tomcat</h4><p>web应用服务器，可以利用它相应HTML页面的访问请求。</p>
+<h4 id="Servlet"><a href="#Servlet" class="headerlink" title="Servlet"></a>Servlet</h4><p>java编写的服务器端程序，主要功能是交互式的浏览、修改数据，生成动态web的内容</p>
+<p>java语言的一个接口</p>
+<p>主要是将http请求，封装为一个request对象，</p>
+<h4 id="SpringMVC"><a href="#SpringMVC" class="headerlink" title="SpringMVC"></a>SpringMVC</h4><p>核心控制器：dispatcherServlet(前端控制器)</p>
+<p>是一个具有mvc功能的Servlet</p>
+<blockquote>
+<p> 请求说明：一个请求进来经过前端控制器Dispatcher Servlet，这是前端的核心。一个请求的URL进来，经过Dispatcher Servlet转发，首先转发到Handler Mapping，②Handler Mapping的作用就是完成对URL到Controller组件的映射，然后通过Dispatcher Servlet从Handlermapping查找处理request的Controller。③ controller处理request请求后并返回ModelAndView对象，Controller是是springmvc中负责处理request的组件，ModelAndView是封装结果视图的组件。其后面的步骤就是将视图结果返回给客户端。总结：上图除了Dispatcherservlet以外其他的都是相互独立，所有请求都经过这个核心控制器进行转发控制。   </p>
+</blockquote>
+<h2 id="四、OS-计算机操作系统"><a href="#四、OS-计算机操作系统" class="headerlink" title="四、OS(计算机操作系统)"></a>四、OS(计算机操作系统)</h2><h3 id="【OS】DOS"><a href="#【OS】DOS" class="headerlink" title="【OS】DOS"></a>【OS】DOS</h3><p><strong>是什么？</strong></p>
+<p>DOS(Disk Operation System)磁盘操作系统，通过dos语言（命令）对电脑系统中的磁盘文件进行操作管理。</p>
+<p><strong>在哪里？</strong></p>
+<p>windows操作系统下通过cmd即可运行dos环境</p>
+<p><strong>同为操作系统，和windows有何异同？</strong></p>
+<p>Dos实际上先于windows出现，最大的不同是windows相较于dos实现了图形化界面，无需输入命令，鼠标点击即可，且我们一次可以打开多个程序窗口，而不像dos需要记忆大量命令，还是单任务单对象。</p>
+<p>但dos仍然有很多优点，比如一些远程操作等高级操作，dos只需要一行命令即可实现，而windows却要一直点点点&#x2F;(ㄒoㄒ)&#x2F;~~</p>
+<p>而且dos的速度非常快，效率非常高。</p>
+<h3 id="【OS】Cmd-与-powershell"><a href="#【OS】Cmd-与-powershell" class="headerlink" title="【OS】Cmd 与 powershell"></a>【OS】Cmd 与 powershell</h3><p>cmd和powershell都是windows下的终端，powershell是新终端，版本更高。</p>
+<h5 id="终端中的常用快捷键"><a href="#终端中的常用快捷键" class="headerlink" title="终端中的常用快捷键"></a><strong>终端中的常用快捷键</strong></h5><ol>
+<li>↑：获取上一次输入的命令</li>
+<li>tab:快速补全路径</li>
+<li>esc:清空当前输入的命令</li>
+<li>cls：清空整个终端</li>
+<li>ctrl+c：停止服务器运行</li>
+</ol>
+<h3 id="【OS】关于-r-、-r-n-、-n的区别"><a href="#【OS】关于-r-、-r-n-、-n的区别" class="headerlink" title="【OS】关于\r 、\r\n 、  \n的区别"></a>【OS】关于\r 、\r\n 、  \n的区别</h3><p>\n：换行 （换到当前位置的下一行，而不是行首）</p>
+<p>\r：回车（回到当前行的行首，可能会覆盖该行）</p>
+<p>在windows系统中，实现我们所想的”换行”实际是回车换行，需要用\r\n实现，而linux系统下则只需要\n</p>
+<p>但我们编写某些高级语言程序时，发现，使用\n也可以达到我们想要的效果，这是因为，编译器，帮我们将\n自动转换为了\r\n</p>
+<h3 id="【os】基础知识"><a href="#【os】基础知识" class="headerlink" title="【os】基础知识"></a>【os】基础知识</h3><p>什么是操作系统接口？</p>
+<p>—系统调用（的函数）   （主要包括以下这些）</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220222203652054.png" alt="image-20220222203652054" style="zoom: 80%;" />
+
+<ol>
+<li></li>
+</ol>
+<p>道：运行在系统里的进程&#x2F;线程的数量</p>
+<p>操作系统是运行在硬件上的第一层软件</p>
+<ol start="2">
+<li></li>
+</ol>
+<p>可以把操作系统看作虚拟机：</p>
+<p>硬件裸机+OS扩展功能&#x3D;&#x3D;&#x3D;&gt;虚拟机</p>
+<p>操作系统也可以看作资源管理器，跟踪资源，及时回收</p>
+<p>（内存管理，cpu管理，IO设备管理，文件管理）  </p>
+<ol start="3">
+<li></li>
+</ol>
+<p>操作系统的功能性需求：供用户使用（用户接口：命令 图形），供应用程序调用（API）</p>
+<p>操作系统非功能性需求  </p>
+<p>性能：吞吐量（单位时间内处理的作业量）、响应时间、用户数</p>
+<ol start="4">
+<li></li>
+</ol>
+<p>线程：一次独立的运行过程，<strong>系统调度</strong>的最小单位，（系统执行的不是程序，而是线程）</p>
+<p>进程：拥有<strong>资源</strong>的最小实体，（一个进程中可能有许多线程在使用其资源）</p>
+<p>☀进程是程序在一个数据集合上的运行过程，是系统进行资源分配和调度的一个独立单位</p>
+<p>（现在的教材并没有明确区分线程和进程的概念，反而还没怎么提线程了，按☀记即可）</p>
+<ol start="5">
+<li></li>
+</ol>
+<p>单道程序设计：内存中只能有一个任务驻留，独占资源 </p>
+<p>（处理器 must wait for I&#x2F;O instruction to complete before 继续做）</p>
+<p>多道程序设计：内存中多个任务程序同时<strong>准备</strong>运行</p>
+<p>（ps:<strong>准备</strong>：<strong>cpu是串行的</strong>，多个任务之间不可能真正的一起处理，还是存在调度问题，可以插空使用）</p>
+<p>同步：实际上是一种协调配合</p>
+<p>互斥：不能同时用一个</p>
+<p>死锁。。</p>
+<p>分时系统：时间分片，处理器轮流使用，最大化减少响应时间，</p>
+<ol start="6">
+<li></li>
+</ol>
+<p>本课程基于单机操作系统</p>
+<p>单机操作系统的类型：</p>
+<ul>
+<li>批处理系统：吞吐量大，提高资源利用率</li>
+<li>分时系统：响应时间少</li>
+<li>实时系统</li>
+</ul>
+<ol start="7">
+<li></li>
+</ol>
+<p>现代OS的两大特征：</p>
+<p>任务并行&amp;资源共享</p>
+<ol start="8">
+<li></li>
+</ol>
+<p>程序执行顺序</p>
+<ul>
+<li>顺序执行（特征：顺序性，封闭性，可在现性（相同条件结果可复刻））</li>
+<li>并发执行（特征：间断性，非封闭性，不可再现）</li>
+</ul>
+<p>解决并发执行结果的不可再现性（即每次都可能不同），应使A进程的读与B进程的写不能同时进行</p>
+<p>同步、互斥、死锁</p>
+<p>分时系统：</p>
+<p>针对交互式工作以 </p>
+<p>调度频率高，浪费掉额外时间，转换时间？</p>
+<p><strong>区别</strong></p>
+<p>调度的主动性（主动&#x2F;被动）:</p>
+<p>调度的频率：</p>
+<p>并 行&#x2F;并发</p>
+<p>执行模式</p>
+<p>微核结构</p>
+<h2 id="五、web相关"><a href="#五、web相关" class="headerlink" title="五、web相关"></a>五、web相关</h2><h2 id="六、其他"><a href="#六、其他" class="headerlink" title="六、其他"></a>六、其他</h2><h3 id="正则表达式"><a href="#正则表达式" class="headerlink" title="正则表达式"></a>正则表达式</h3><ol>
+<li>注意在正则式中[\S\s]*表示匹配所有字符</li>
+</ol>
+<h3 id="镜像（Mirroring）"><a href="#镜像（Mirroring）" class="headerlink" title="镜像（Mirroring）"></a>镜像（Mirroring）</h3><p>一种文件存储形式，一个磁盘上的数据在另一个磁盘上存在一个完全相同的副本即为镜像</p>
+<h1 id="七、前端"><a href="#七、前端" class="headerlink" title="七、前端"></a>七、前端</h1><h2 id="【前端】node-js"><a href="#【前端】node-js" class="headerlink" title="【前端】node.js"></a>【前端】node.js</h2><blockquote>
+<p>注意：在node里面：文件夹名字&#x2F;文件名字最好不要出现中文&#x2F;空格，不然可能导致某些命令错误</p>
+</blockquote>
+<h4 id="node-js的模块化概念"><a href="#node-js的模块化概念" class="headerlink" title="node.js的模块化概念"></a>node.js的模块化概念</h4><p>CommonJs是模块化的标准。广泛应用于Nodejs、vue、react等框架语言</p>
+<p>模块是Node.js应用程序的基本组成部分，文件与模块是一一对应的。一个Node.js文件就是一个模块。</p>
+<p>可以认为每个模块都是一个module对象，包含两个对象  ：require（从外部获取一个模块的公开接口）  exports（<strong>模块公开的接口</strong>）</p>
+<p>想让外部可以访问模块里面的方法或属性，就必须通过exports&#x2F;module.exports暴露属性或方法</p>
+<p>1.将想让外部模块使用的方法&#x2F;属性添加为exports对象的成员变量</p>
+<p>2.也可以直接将module.exports&#x3D;一个对象，直接暴露一个对象</p>
+<p>最好不要同时使用上述方法，可能存在覆盖。</p>
+<img src="https://img-blog.csdnimg.cn/20190418234619685.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2tlcnJ5cXB3,size_16,color_FFFFFF,t_70" alt="img" style="zoom:80%;" />
+
+<p><strong>可以认为var hello&#x3D;require(‘.&#x2F;hello’)；  hello就是hello.js中的exports对象</strong></p>
+<h4 id="npm与包"><a href="#npm与包" class="headerlink" title="npm与包"></a>npm与包</h4><ul>
+<li><h5 id="包的安装"><a href="#包的安装" class="headerlink" title="包的安装"></a>包的安装</h5><blockquote>
+<p>安装命令可依据官方文档</p>
+</blockquote>
+<ol>
+<li>项目包</li>
+</ol>
+<p><strong>npm i xxx -D</strong>     #开发依赖包（只在项目开发阶段用到，上线即不再使用）  ， 被记录到devDependencies节点下</p>
+<p><strong>npm i xxx</strong>          #核心依赖包   ， 被记录到dependencies节点下</p>
+<p>   2.全局包(如nrm,往往是工具包)</p>
+<p><strong>npm i xxx -g</strong>  </p>
+<p><strong>npm uninstall xxx -g</strong></p>
+<p>【全局安装与本地安装的区别】见csdn</p>
+</li>
+<li><h5 id="包管理配置文件：package-json"><a href="#包管理配置文件：package-json" class="headerlink" title="包管理配置文件：package.json"></a>包管理配置文件：package.json</h5><p>创建口令：<strong>npm init -y</strong> </p>
+<p>创建时间：项目建设初</p>
+<p>前提：项目文件夹名称为 <strong>英文 无空格</strong></p>
+<p>package.json中的 dependencies 对象即记录项目所用的所有包的名称与版本，每一次下载包，npm会自动添加信息到p.json中</p>
+<blockquote>
+<p>在项目多人协作时，无需将node_modules上传到github中，因为太大了<br>因为有package.json,拉取后只需 执行  <strong>npm install</strong>  即可下载该项目所需的所有包</p>
+</blockquote>
+</li>
+<li><h5 id="删除包"><a href="#删除包" class="headerlink" title="删除包"></a>删除包</h5><p><strong>npm uninstall xxx</strong></p>
+</li>
+<li><h5 id="全局包：i5ting-toc"><a href="#全局包：i5ting-toc" class="headerlink" title="全局包：i5ting_toc"></a>全局包：i5ting_toc</h5><p>命令：<strong>i5ting_toc -f  xxx  -o</strong></p>
+<p>将md文件转化为html，并在默认浏览器中预览，同时生成preview文件夹（包含对应转换后的html文件，可以随时打开预览）</p>
+</li>
+</ul>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220114153408323.png" alt="image-20220114153408323" style="zoom:80%;" />
+
+
+
+<h4 id="nodemon"><a href="#nodemon" class="headerlink" title="nodemon"></a>nodemon</h4><blockquote>
+<p>学习时，已经全局安装过Nodemon了，下次使用时只需</p>
+<p>nodemon xxx（xxx是文件名）</p>
+<p>代替原来的node xxx运行项目</p>
+</blockquote>
+<p>监听项目文件的变动，自动帮我们重启项目</p>
+<h2 id="【前端】Express框架"><a href="#【前端】Express框架" class="headerlink" title="【前端】Express框架"></a>【前端】Express框架</h2><p>npm上的第三方包，提供快速创建web服务器的方法</p>
+<p>作用类似于Http模块，专门用来创建web服务器</p>
+<p>同时express也提供了一些其他的方法，相较于Http更强大。</p>
+<h2 id="【前端】AJAX"><a href="#【前端】AJAX" class="headerlink" title="【前端】AJAX"></a>【前端】AJAX</h2><p><strong>简介</strong>：异步的js与xml</p>
+<p>☀最大特点：无需刷新，获取数据，改变页面</p>
+<p>❓ <strong>xml:</strong></p>
+<p>可扩展性标记语言</p>
+<p>和html相比，xml全是自定义标签，而html使用的都是预定义标签，如h1 html a div</p>
+<p>【use】用来存储、传输数据，对应有xml格式的数据，一个标签用于描述一段数据  	🔔：现常用JSON格式数据(下方有详细介绍)</p>
+<p>【use】也常做为配置文件，如：web.xml</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">例：xml有固定的语法规范，使用前自己查明即可，这里不过多赘述，增加现阶段学习负担</span><br><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;gb2312&quot;</span>?&gt;</span></span><br><span class="line"> </span><br><span class="line"><span class="tag">&lt;<span class="name">class</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">stu</span> <span class="attr">id</span>=<span class="string">&quot;001&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>杨过<span class="tag">&lt;/<span class="name">name</span>&gt;</span> </span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>男<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>20<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">stu</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">stu</span> <span class="attr">id</span>=<span class="string">&quot;002&quot;</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>小龙女<span class="tag">&lt;/<span class="name">name</span>&gt;</span>    </span><br><span class="line">        <span class="tag">&lt;<span class="name">sex</span>&gt;</span>女<span class="tag">&lt;/<span class="name">sex</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">age</span>&gt;</span>21<span class="tag">&lt;/<span class="name">age</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">stu</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">class</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>☀AJAX的优点：</p>
+<p>①无需刷新，即可从服务器端获取数据</p>
+<p>②允许根据用户事件来更新页面内容</p>
+<p>☀ AJAX的缺点：</p>
+<p>①没有浏览历史，不能回退</p>
+<p>②SEO不友好，爬虫并不能捕获到相关数据❄(csdn上有改善seo的方法)</p>
+<p>③跨域问题❄</p>
+<h4 id="【AJAX】关于JSON"><a href="#【AJAX】关于JSON" class="headerlink" title="【AJAX】关于JSON"></a>【AJAX】关于JSON</h4><p><strong>总体认识：</strong>一种传递、存储对象的语法格式，对象包括：name&#x2F;value对、数组、等其他对象</p>
+<p>其语法规则参考Js, 广泛应用于多种语言</p>
+<p><strong>语法规则：</strong>特殊点：❗不能出现单引号   ❗所有的名必须用<u>双引号</u>包裹  ❗数组或对象的最后一个成员后面不能加逗号</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">JSON数据实例</span><br><span class="line">&#123;</span><br><span class="line">  &quot;name&quot;:&quot;jack&quot;,</span><br><span class="line">  &quot;skillz&quot;: &#123;</span><br><span class="line">    &quot;web&quot;: [ </span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;html&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;5&quot;</span><br><span class="line">      &#125;，</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;css&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;3&quot; </span><br><span class="line">      &#125;</span><br><span class="line">    ],</span><br><span class="line">    &quot;database&quot;: [</span><br><span class="line">      &#123;</span><br><span class="line">        &quot;name&quot;: &quot;sql&quot;，</span><br><span class="line">        &quot;years&quot;: &quot;7&quot; </span><br><span class="line">      &#125;</span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<p>🔔  JSON 是 JS 对象的字符串表示法，它使用文本表示一个 JS 对象的信息，本质是一个字符串。</p>
+<p>var obj &#x3D; {a: ‘Hello’, b: ‘World’}; &#x2F;&#x2F;这是一个js对象</p>
+<p>var json &#x3D; ‘{“a”: “Hello”, “b”: “World”}’; &#x2F;&#x2F;这是一个 JSON 字符串</p>
+<p>🧠：一些个人发现：</p>
+<p>查找资料的时候，常常出现JSON字符串这个名词，而许多实例如代码框中的，明显不是字符串。</p>
+<p>我使用log打印上述JSON对象（暂且称呼），结果发现打印值就是js对象</p>
+<p>可见JSON出现的意义就是字符串化js对象，作字符串用</p>
+<p>☀两个转换</p>
+<p>JSON字符串转js对象</p>
+<p>JSON.parse(Str);</p>
+<p>JS对象(或者是json对象)转JSON字符串</p>
+<p>JSON.stringify(Object);</p>
+<h4 id="【AJAX】关于HTTP请求"><a href="#【AJAX】关于HTTP请求" class="headerlink" title="【AJAX】关于HTTP请求"></a>【AJAX】关于HTTP请求</h4><p>请求的内容又叫<strong>请求报文</strong>，相应的还有<strong>响应报文</strong></p>
+<p>以下内容，在调试时，都可以通过浏览器控制台查看，是🚩后为具体位置</p>
+<p>☀请求报文的格式：</p>
+<p>行： METHOD(如POST、GET、DELETE……)      URL            HTTP协议的版本号</p>
+<p>头：pg:   HOST:   xxx</p>
+<p>​                xxx:    xxx        🔔：格式均按照名称+冒号+空格+值                                                          🚩 请求行、头都在RequestHeaders</p>
+<p>空行</p>
+<p>体：（若是get请求，则请求体为空）               🚩post请求在：FromData    get请求可在 QueryStringParameters中查看查询字符串参数</p>
+<p>☀响应报文的格式：</p>
+<p>行：HTTP协议版本号   响应状态码（如200，404，403） 状态字（其中200：OK 404：NOT FOUND）</p>
+<p>头：格式同上                                                        🚩 请求行、头都在ResponseHeaders</p>
+<p>空行</p>
+<p>体：响应体是html语言                                         🚩Response</p>
+<h4 id="【AJAX】关于IE缓存"><a href="#【AJAX】关于IE缓存" class="headerlink" title="【AJAX】关于IE缓存"></a>【AJAX】关于IE缓存</h4><p>在使用IE浏览器作为客户端发送AJAX请求时，存在响应缓存问题</p>
+<p>即若两次请求的method,url地址相同，则直接从缓存区获得上一次的响应结果。</p>
+<p>解决方法：（针对get方法）添加查询字符串参数 t&#x3D;Data.now()    使每次请求的url地址都不同。</p>
+<img src="C:\Users\Lenovo\AppData\Roaming\Typora\typora-user-images\image-20220130001937042.png" alt="image-20220130001937042" style="zoom: 80%;" />
+
+<p>​    </p>
+<h2 id="【前端】移动端开发"><a href="#【前端】移动端开发" class="headerlink" title="【前端】移动端开发"></a>【前端】移动端开发</h2><p>国内尚无自主研发的移动端浏览器内核，兼容移动端主流浏览器，处理Webkit内核浏览器即可</p>
+
+        </div>
+
+        
+            <section class="post-copyright">
+                
+                    <p class="copyright-item">
+                        <span>Author:</span>
+                        <span>Chloe HXY</span>
+                    </p>
+                
+                
+                
+                    <p class="copyright-item">
+                        <span>License:</span>
+                        <span>Copyright (c) 2020 LICENSE</span>
+                    </p>
+                
+                
+
+            </section>
+        
+        <section class="post-tags">
+            <div>
+                <span>Tag(s):</span>
+                <span class="tag">
+                    
+                </span>
+            </div>
+            <div>
+                <a href="javascript:window.history.back();">back</a>
+                <span>· </span>
+                <a href="/">home</a>
+            </div>
+        </section>
+        <section class="post-nav">
+            
+                <a class="prev" rel="prev" href="/2022/04/10/%E5%8D%81%E6%97%A5%E8%B0%88/">十日谈</a>
+            
+            
+            <a class="next" rel="next" href="/2021/12/10/%E4%BA%BA%E9%97%B4%E7%BC%BA%E5%B8%AD%E4%B8%89%E5%B0%8F%E6%97%B6/">人间缺席三小时</a>
+            
+        </section>
+
+
+    </article>
+</div>
+
+            </div>
+            <footer id="footer" class="footer">
+    <div class="copyright">
+        <span>© Chloe HXY | Powered by <a href="https://hexo.io" target="_blank">Hexo</a> & <a href="https://github.com/Siricee/hexo-theme-Chic" target="_blank">Chic</a></span>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>
